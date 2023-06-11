@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33424.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtorAPI", "RealtorAPI\RealtorAPI.csproj", "{C1F0D5E6-69F2-4730-9DFC-EF8EB9A2C549}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realtor.DAL", "Realtor.DAL\Realtor.DAL.csproj", "{15BD7799-1912-4CD1-A0F5-24F1B76E7881}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realtor.BLL", "Realtor.BLL\Realtor.BLL.csproj", "{9A23A4D9-EF68-4072-98CF-DD516641740D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealtorAPI.Common", "RealtorAPI.Common\RealtorAPI.Common.csproj", "{15FC8C7F-409D-420D-9158-D829152C4F91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1F0D5E6-69F2-4730-9DFC-EF8EB9A2C549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1F0D5E6-69F2-4730-9DFC-EF8EB9A2C549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1F0D5E6-69F2-4730-9DFC-EF8EB9A2C549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1F0D5E6-69F2-4730-9DFC-EF8EB9A2C549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15BD7799-1912-4CD1-A0F5-24F1B76E7881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15BD7799-1912-4CD1-A0F5-24F1B76E7881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15BD7799-1912-4CD1-A0F5-24F1B76E7881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15BD7799-1912-4CD1-A0F5-24F1B76E7881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A23A4D9-EF68-4072-98CF-DD516641740D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A23A4D9-EF68-4072-98CF-DD516641740D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A23A4D9-EF68-4072-98CF-DD516641740D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A23A4D9-EF68-4072-98CF-DD516641740D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15FC8C7F-409D-420D-9158-D829152C4F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15FC8C7F-409D-420D-9158-D829152C4F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15FC8C7F-409D-420D-9158-D829152C4F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15FC8C7F-409D-420D-9158-D829152C4F91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE26C2E7-B96D-43DE-A013-9D1B573831D7}
+	EndGlobalSection
+EndGlobal
