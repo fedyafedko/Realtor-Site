@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realtor.DAL", "Realtor.DAL\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realtor.BLL", "Realtor.BLL\Realtor.BLL.csproj", "{9A23A4D9-EF68-4072-98CF-DD516641740D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealtorAPI.Common", "RealtorAPI.Common\RealtorAPI.Common.csproj", "{15FC8C7F-409D-420D-9158-D829152C4F91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtorAPI.Common", "RealtorAPI.Common\RealtorAPI.Common.csproj", "{15FC8C7F-409D-420D-9158-D829152C4F91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
