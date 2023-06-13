@@ -21,15 +21,14 @@ namespace Realtor.BLL.Service
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
-        public async Task<ApartmentDTO> AddApartment(ApartmentDTO apartment)
+        public async Task<CreateApartmentDTO> AddApartment(CreateApartmentDTO apartment)
         {
             Apartment entity = _mapper.Map<Apartment>(apartment);
             if (await _repository.Table.FindAsync(entity.Id) != null)
                 throw new InvalidOperationException("Entity with such key already exists in database");
             await _repository.AddAsync(entity);
-            return _mapper.Map<ApartmentDTO>(entity);
+            return _mapper.Map<CreateApartmentDTO>(entity);
         }
-
         public async Task<bool> DeleteApartment(int id)
         {
             var apartment = await _repository.Table.FindAsync(id);
@@ -47,7 +46,7 @@ namespace Realtor.BLL.Service
             return apartment != null ? _mapper.Map<ApartmentDTO>(apartment) : null;
         }
 
-        public async Task<ApartmentDTO> UpdateApartment(int id, ApartmentDTO apartment)
+        public async Task<UpdateApartmentDTO> UpdateApartment(int id, UpdateApartmentDTO apartment)
         {
             var entity = await _repository.Table.FindAsync(id);
             if (entity == null)
@@ -56,7 +55,7 @@ namespace Realtor.BLL.Service
             }
             _mapper.Map(apartment, entity);
             await _repository.UpdateAsync(entity);
-            return _mapper.Map<ApartmentDTO>(entity);
+            return _mapper.Map<UpdateApartmentDTO>(entity);
         }
     }
 }

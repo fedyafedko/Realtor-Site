@@ -28,7 +28,7 @@ namespace RealtorAPI.Controllers
         }
         [HttpPost("apartment")]
         [ActionName(nameof(GetById))]
-        public async Task<IActionResult> InsertApartment(ApartmentDTO apartment)
+        public async Task<IActionResult> InsertApartment(CreateApartmentDTO apartment)
         {
             try
             {
@@ -53,7 +53,7 @@ namespace RealtorAPI.Controllers
             }
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] ApartmentDTO apartment)
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateApartmentDTO apartment)
         {
             try
             {
@@ -65,6 +65,18 @@ namespace RealtorAPI.Controllers
                 return NotFound(ex.Message);
             }
             catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpGet]
+        public IActionResult GetAll()
+        {
+            try
+            {
+                return Ok(_service.GetAll());
+            }
+            catch (InvalidOperationException ex)
             {
                 return BadRequest(ex.Message);
             }

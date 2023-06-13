@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder();
 
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(ApartmentProfile).Assembly);
+
 builder.Services.AddControllers();
 //DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
