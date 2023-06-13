@@ -5,7 +5,7 @@
 namespace Realtor.DAL.Migrations
 {
     /// <inheritdoc />
-    public partial class ApatmentsMigration : Migration
+    public partial class ApartmentMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

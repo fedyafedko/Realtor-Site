@@ -40,5 +40,34 @@ namespace RealtorAPI.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCurrency(int id)
+        {
+            try
+            {
+                return await _service.DeleteApartment(id) ? Ok() : NotFound();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> Update(int id, [FromBody] ApartmentDTO apartment)
+        {
+            try
+            {
+                var result = await _service.UpdateApartment(id, apartment);
+                return Ok(result);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

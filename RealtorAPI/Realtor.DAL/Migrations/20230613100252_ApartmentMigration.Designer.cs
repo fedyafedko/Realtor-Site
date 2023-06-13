@@ -11,8 +11,8 @@ using Realtor.DAL.EF;
 namespace Realtor.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230611155947_ApatmentsMigration")]
-    partial class ApatmentsMigration
+    [Migration("20230613100252_ApartmentMigration")]
+    partial class ApartmentMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

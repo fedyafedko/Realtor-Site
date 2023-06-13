@@ -8,7 +8,8 @@ namespace Realtor.BLL.AutoMapper
     {
         public ApartmentProfile() 
         {
-            CreateMap<ApartmentDTO, Apartment>().ReverseMap();
+            CreateMap<ApartmentDTO, Apartment>()
+               .ForMember(dest => dest.Images, opt => opt.MapFrom(src => string.Join(", ", src.Images)));
         }
     }
 }
