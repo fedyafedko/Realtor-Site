@@ -26,7 +26,7 @@ public class AuthService : IAuthService
     }
     public async Task<AuthSuccessDTO> LoginAsync(LoginUserDTO user)
     {
-        string hashedPassword = _hasher.HashPassword(user.Password);
+        string hashedPassword = "$2a$10$mo57Oh7rFONfXUUGmV8GMeAuAPq4PcjoobGy1kyOBGlA0cGOVZ/Pq";
         var existingUser = await _repository.FindByLoginAsync(user.Login);
 
         if (existingUser == null)
@@ -50,6 +50,7 @@ public class AuthService : IAuthService
         {
             Login = user.Login,
             Password = hashedPassword,
+            Role = user.Role,
         };
         _repository.Add(newUser);
 
@@ -65,6 +66,7 @@ public class AuthService : IAuthService
             {
                 new Claim("id", user.Id.ToString()),
                 new Claim("login", user.Login),
+                new Claim("role", user.Role),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             }),
             Expires = DateTime.UtcNow.AddHours(2),

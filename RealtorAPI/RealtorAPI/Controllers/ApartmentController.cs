@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using Realtor.BLL.Interfaces;
 using RealtorAPI.Common.DTO;
@@ -28,6 +29,7 @@ namespace RealtorAPI.Controllers
         }
         [HttpPost("apartment")]
         [ActionName(nameof(GetById))]
+        [Authorize(Roles = "Realtor")]
         public async Task<IActionResult> InsertApartment(CreateApartmentDTO apartment)
         {
             try
@@ -41,6 +43,7 @@ namespace RealtorAPI.Controllers
             }
         }
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Realtor")]
         public async Task<IActionResult> DeleteCurrency(int id)
         {
             try
@@ -53,6 +56,7 @@ namespace RealtorAPI.Controllers
             }
         }
         [HttpPut("{id}")]
+        [Authorize(Roles = "Realtor")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateApartmentDTO apartment)
         {
             try
