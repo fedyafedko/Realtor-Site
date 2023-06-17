@@ -8,6 +8,7 @@ namespace Realtor.DAL.Entities
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
         public int Id { get; set; }
+        public int IdUser { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Images { get; set; } = string.Empty;
         public int NumberRoom { get; set; }

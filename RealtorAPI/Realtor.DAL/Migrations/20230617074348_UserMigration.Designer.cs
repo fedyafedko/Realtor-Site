@@ -11,8 +11,8 @@ using Realtor.DAL.EF;
 namespace Realtor.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230613205440_UsersMigration")]
-    partial class UsersMigration
+    [Migration("20230617074348_UserMigration")]
+    partial class UserMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace Realtor.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Floor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdUser")
                         .HasColumnType("int");
 
                     b.Property<string>("Images")
@@ -74,11 +77,19 @@ namespace Realtor.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

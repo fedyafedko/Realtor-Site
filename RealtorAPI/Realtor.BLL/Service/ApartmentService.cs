@@ -3,11 +3,6 @@ using Realtor.BLL.Interfaces;
 using Realtor.DAL.Entities;
 using Realtor.DAL.Repositories.Interfaces;
 using RealtorAPI.Common.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Realtor.BLL.Service
 {

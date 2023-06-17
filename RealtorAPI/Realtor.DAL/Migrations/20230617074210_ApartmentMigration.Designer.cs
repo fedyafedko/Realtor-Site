@@ -11,7 +11,7 @@ using Realtor.DAL.EF;
 namespace Realtor.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230613100252_ApartmentMigration")]
+    [Migration("20230617074210_ApartmentMigration")]
     partial class ApartmentMigration
     {
         /// <inheritdoc />
@@ -43,6 +43,9 @@ namespace Realtor.DAL.Migrations
                     b.Property<int>("Floor")
                         .HasColumnType("int");
 
+                    b.Property<int>("IdUser")
+                        .HasColumnType("int");
+
                     b.Property<string>("Images")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -64,6 +67,31 @@ namespace Realtor.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Apartments");
+                });
+
+            modelBuilder.Entity("Realtor.DAL.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

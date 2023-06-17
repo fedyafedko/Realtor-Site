@@ -26,7 +26,7 @@ public class AuthService : IAuthService
     }
     public async Task<AuthSuccessDTO> LoginAsync(LoginUserDTO user)
     {
-        string hashedPassword = "$2a$10$mo57Oh7rFONfXUUGmV8GMeAuAPq4PcjoobGy1kyOBGlA0cGOVZ/Pq";
+        string hashedPassword = _hasher.HashPassword(user.Password);
         var existingUser = await _repository.FindByLoginAsync(user.Login);
 
         if (existingUser == null)

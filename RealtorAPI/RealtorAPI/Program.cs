@@ -9,7 +9,10 @@ using Realtor.DAL.EF;
 using Realtor.DAL.Repositories;
 using Realtor.DAL.Repositories.Interfaces;
 using RealtorAPI.Common.Models;
+using RealtorAPI.Validators;
+using FluentValidation.AspNetCore;
 using System.Text;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder();
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
@@ -17,15 +20,25 @@ builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSet
 builder.Services.AddAutoMapper(typeof(ApartmentProfile).Assembly);
 
 builder.Services.AddControllers();
+
 //DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 //Repositories
 builder.Services.AddScoped<IApartmentsRepository, ApartmentRepository>();
 builder.Services.AddScoped<UserRepository>();
+
 //Service
 builder.Services.AddScoped<IApartmentService, ApartmentService>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+
+//Validators
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<CreateApartmentValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<UpdateApartmentValidator>();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => {

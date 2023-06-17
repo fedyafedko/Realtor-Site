@@ -10,6 +10,9 @@ namespace Realtor.BLL.AutoMapper
         {
             CreateMap<ApartmentDTO, Apartment>().ReverseMap();
             CreateMap<CreateApartmentDTO, Apartment>().ReverseMap();
+            CreateMap<User, Apartment>()
+                .ForMember(dest => dest.IdUser, source => source.MapFrom(s => s.Id))
+                .ReverseMap();
             CreateMap<UpdateApartmentDTO, Apartment>().ReverseMap();
         }
     }
