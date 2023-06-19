@@ -6,6 +6,8 @@ namespace Realtor.DAL.Entities
 {
     public class User
     {
+        public static readonly object Claims;
+
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }

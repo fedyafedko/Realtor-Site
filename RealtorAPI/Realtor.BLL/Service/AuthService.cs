@@ -32,7 +32,7 @@ public class AuthService : IAuthService
         if (existingUser == null)
             throw new KeyNotFoundException(user.Login);
 
-        if (existingUser.Password != hashedPassword)
+        if (BCrypt.Net.BCrypt.Verify(hashedPassword, existingUser.Password))
             throw new UnauthorizedAccessException(user.Login);
 
         return new AuthSuccessDTO(GenerateJwtToken(existingUser));

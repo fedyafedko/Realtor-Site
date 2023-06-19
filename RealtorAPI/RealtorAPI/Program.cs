@@ -38,6 +38,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateApartmentValidator>();
 builder.Services.AddValidatorsFromAssemblyContaining<UpdateApartmentValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<LoginUserValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<RegisterUserValidator>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
