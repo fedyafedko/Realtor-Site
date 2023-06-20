@@ -1,13 +1,12 @@
 ﻿using RealtorAPI.Common.DTO;
 
-namespace Realtor.BLL.Interfaces
+namespace Realtor.BLL.Interfaces;
+
+public interface IApartmentService
 {
-    public interface IApartmentService
-    {
-        Task<CreateApartmentDTO> AddApartment(CreateApartmentDTO apartment);
-        Task<ApartmentDTO?> GetById(int id);
-        List<ApartmentDTO> GetAll();
-        Task<bool> DeleteApartment(int id);
-        Task<UpdateApartmentDTO> UpdateApartment(int id, UpdateApartmentDTO apartment);
-    }
+    Task<CreateApartmentDTO> AddApartment(CreateApartmentDTO apartment, string jwtToken);
+    Task<ApartmentDTO?> GetById(int id);
+    List<ApartmentDTO> GetAll(string jwtToken);
+    Task<bool> DeleteApartment(int id);
+    Task<UpdateApartmentDTO> UpdateApartment(int id, UpdateApartmentDTO apartment);
 }

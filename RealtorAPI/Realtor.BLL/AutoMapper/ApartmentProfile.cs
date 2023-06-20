@@ -2,18 +2,17 @@
 using Realtor.DAL.Entities;
 using RealtorAPI.Common.DTO;
 
-namespace Realtor.BLL.AutoMapper
+namespace Realtor.BLL.AutoMapper;
+
+public class ApartmentProfile : Profile
 {
-    public class ApartmentProfile : Profile
+    public ApartmentProfile() 
     {
-        public ApartmentProfile() 
-        {
-            CreateMap<ApartmentDTO, Apartment>().ReverseMap();
-            CreateMap<CreateApartmentDTO, Apartment>().ReverseMap();
-            CreateMap<User, Apartment>()
-                .ForMember(dest => dest.IdUser, source => source.MapFrom(s => s.Id))
-                .ReverseMap();
-            CreateMap<UpdateApartmentDTO, Apartment>().ReverseMap();
-        }
+        CreateMap<ApartmentDTO, Apartment>().ReverseMap();
+        CreateMap<CreateApartmentDTO, Apartment>().ReverseMap();
+        CreateMap<User, Apartment>()
+            .ForMember(dest => dest.IdUser, source => source.MapFrom(s => s.Id))
+            .ReverseMap();
+        CreateMap<UpdateApartmentDTO, Apartment>().ReverseMap();
     }
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Realtor.BLL.Interfaces;
 using Realtor.DAL.Entities;
@@ -79,5 +78,15 @@ public class AuthService : IAuthService
         var token = jwtTokenHandler.CreateToken(tokenDescriptor);
         var jwtToken = jwtTokenHandler.WriteToken(token);
         return jwtToken;
+    }
+    public static IEnumerable<Claim> GetClaimsFromJwtToken(string jwtToken)
+    {
+        var jwtTokenHandler = new JwtSecurityTokenHandler();
+        var token = jwtTokenHandler.ReadToken(jwtToken) as JwtSecurityToken;
+
+        if (token == null)
+            throw new NullReferenceException("Token is not valid");
+
+        return token.Claims;
     }
 }
