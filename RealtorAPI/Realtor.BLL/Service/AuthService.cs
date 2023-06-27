@@ -51,7 +51,7 @@ public class AuthService : IAuthService
             Password = hashedPassword,
             Role = user.Role,
         };
-        _repository.Add(newUser);
+        await _repository.AddAsync(newUser);
 
         return new AuthSuccessDTO(GenerateJwtToken(newUser));
     }
