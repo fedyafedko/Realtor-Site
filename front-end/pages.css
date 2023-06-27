@@ -6,8 +6,9 @@ header{
     background: #F17105;
     height: 40px;
 }
-#register_page{
+body{
     background: #27213C;
+    height: 2000px;
 }
 #register_form {
     background: #F17105;
@@ -21,3 +22,12 @@ header{
     top: 50%;
     transform: translateY(50%);
 }
+#main_header{
+    background-image: url('Images/header.png');
+    background-repeat: no-repeat;
+    height: 500px;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
