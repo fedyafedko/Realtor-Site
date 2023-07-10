@@ -21,19 +21,19 @@ builder.Services.AddAutoMapper(typeof(ApartmentProfile).Assembly);
 
 builder.Services.AddControllers();
 
-//DbContext
+// DbContext
 builder.Services.AddDbContext<ApplicationDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-//Repositories
+// Repositories
 builder.Services.AddScoped<IApartmentsRepository, ApartmentRepository>();
 builder.Services.AddScoped<UserRepository>();
 
-//Service
+// Service
 builder.Services.AddScoped<IApartmentService, ApartmentService>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 
-//Validators
+// Validators
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<CreateApartmentValidator>();
@@ -65,10 +65,10 @@ builder.Services.AddSwaggerGen(c => {
             },
             Array.Empty<string>()
         }
-    }
-    );
+    });
 });
-//Authorization
+
+// Authorization
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options => {
@@ -87,6 +87,17 @@ builder.Services
         };
     });
 
+// CORS
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(build =>
+    {
+        build.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -97,7 +108,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
 
+app.UseCors(); // Додайте цей рядок після app.UseRouting() і перед app.UseAuthorization()
+
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

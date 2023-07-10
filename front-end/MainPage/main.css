@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#main_page{
+    background: #262626;
+    height: 2000px;
+}
+#main_header{
+    background-image: url("../Images/header.png");
+    background-repeat: no-repeat;
+    height: 500px;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.header_button{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    left: 77%;
+    top: 5%;
+    border: 1px solid black;
+}
+#name{
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    width: 510px;
+    top: 200px;
+    border: 1px solid white;
+    left: 550px;
+}
+#nameForObject{
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    top: 20px;
+    left: 40px;
+    width: 350px;
+    border: 1px solid white;
+}
+#apart{
+    width: 250px;
+    height: 360px;
+    background: #F5E9E2;
+    position: relative;
+    top: 40px;
+    left: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#info p {
+    margin: 0;
+    padding: 0px 10px;
+}
+#price{
+    font-family: "Arial Black";
+    font-size: 20px;
+}
+#info{
+    width: 250px;
+    height: 200px;
+    position: relative;
+}
+#previewImage{
+    width: 250px;
+    height: 200px;
+}
+#city{
+    display: inline-block;
+    margin: 0;
+}
+.imageInfo{
+    width: 15px;
+    height: 15px;
+}
+
+
+

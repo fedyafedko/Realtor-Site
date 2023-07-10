@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Realtor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="register.css">
+</head>
+<style>
+  .btn-outline-danger {
+    border-color: black;
+    color: black;
+  }
+
+  .btn-outline-danger:hover,
+  .btn-outline-danger:checked,
+  .btn-outline-danger:active{
+    color: #ffffff;
+    background-color: #393E41;
+    border-color: #393E41;
+  }
+  .btn-primary {
+    background-color: #393E41;
+    border-color: #393E41;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #343434;
+    border-color: #343434;
+    color: #ffffff;
+  }
+</style>
+<body id="register_page">
+<header>
+  <a id="main" href="../MainPage/main.html">Main</a>
+  <a id="auth" href="../LoginPage/login.html">Log in</a>
+  <a id="about" href="https://djinni.co/jobs/my-profile/">About us</a>
+  <div id="name">REALTOR</div>
+</header>
+<main>
+  <form action="" method="post" id="register_form">
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingLogin" placeholder="Password">
+      <label for="floatingLogin">Login</label>
+    </div><br>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div><br>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+      <label for="floatingEmail">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingPhone" placeholder="name@example.com">
+      <label for="floatingPhone">Phone</label>
+    </div>
+    <input type="radio" class="btn-check" name="options-outlined" id="User" autocomplete="off">
+    <label class="btn btn-outline-danger" for="User">User</label>
+    <input type="radio" class="btn-check" name="options-outlined" id="Realtor" autocomplete="off">
+    <label class="btn btn-outline-danger" for="Realtor">Realtor</label><br><br>
+    <button type="submit" class="btn btn-primary" onclick="Register(event)">Sign up</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+  </form>
+</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="register.js"></script>
+</html>

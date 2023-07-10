@@ -25,5 +25,14 @@ public class CreateApartmentValidator : AbstractValidator<CreateApartmentDTO>
         RuleFor(d => d.Description).NotEmpty()
             .MinimumLength(1)
             .MaximumLength(100);
+        RuleFor(d => d.Price).NotEmpty()
+            .MinimumLength(1)
+            .MaximumLength(100);
+        RuleFor(d => d.Address).NotEmpty()
+            .MinimumLength(1)
+            .MaximumLength(100);
+        RuleFor(d => d.City).NotEmpty()
+            .MinimumLength(1)
+            .MaximumLength(100);
     }
 }

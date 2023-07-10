@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: #F5E9E2;
+    height: 90px;
+}
+#register_page{
+    background: #262626;
+}
+#register_form {
+    background: #F5E9E2;
+    height: 450px;
+    width: 300px;
+    border: 10px solid #262626;
+    border-style: double;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    top: 20%;
+    transform: translateY(20%);
+}
+a:hover,
+a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    left: 77%;
+    top: 30%;
+    border: 1px solid black;
+}
+#name{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    margin: -5px 30px;
+}
+
+
+
+
+
