@@ -1,12 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#apartment_page{
+    background: #262626;
+    height: 1400px;
+}
 #add_apartment{
+    background: #F5E9E2;
     width: 500px;
     height: 1000px;
-    border: 1px solid black;
     position: relative;
-    top: 20px;
-    left: 33%;
+    top: 70px;
+    left: 34%;
+    border: 10px solid #262626;
+    border-style: double;
 }
 #header{
-    height: 200px;
-    background: #27213C;
+    background: #F5E9E2;
+    height: 100px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    left: 75%;
+    top: -10%;
+    border: 1px solid black;
+}
+#auth img{
+    max-width: 30px;
+    max-height: 30px;
+    vertical-align: middle;
+}
+#nameForObject{
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    top: 30px;
+    left: 38%;
+    width: 350px;
+    border: 1px solid white;
+}
+.name{
+    width: 200px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    top: 25%;
+    left: 30px;
+
+}
+#footer{
+    background: #F5E9E2;
+    height: 250px;
+    position: relative;
+    top: 100px;
+}
+#motto{
+    position: relative;
+    top: 60px;
+    left: 30px;
+    font-size: 20px;
+    font-family: Arial;
+}
+#motto_image{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -50px;
+    left: 85%;
 }

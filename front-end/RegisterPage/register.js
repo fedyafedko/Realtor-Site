@@ -25,8 +25,9 @@ function Register(event) {
         .then(function(response) {
             if (response.ok) {
                 console.log('Request done');
-                alert("You are successfully registered")
                 location.reload();
+                alert("You are successfully registered")
+                window.location.href = '../MainPage/mainAfterAuth.html';
             }
             else{
                 alert("You have entered incorrect data")

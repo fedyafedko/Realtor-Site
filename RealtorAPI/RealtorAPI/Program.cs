@@ -108,12 +108,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseRouting();
+app.UseCors(
+    opt => opt.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
-app.UseCors(); // Додайте цей рядок після app.UseRouting() і перед app.UseAuthorization()
-
-app.UseAuthentication();
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 
