@@ -51,7 +51,8 @@ public class AuthService : IAuthService
             Password = hashedPassword,
             Role = user.Role,
             Email = user.Email,
-            Phone = user.Phone
+            Phone = user.Phone,
+            Images = user.Image
         };
         await _repository.AddAsync(newUser);
 
