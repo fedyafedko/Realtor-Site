@@ -37,3 +37,20 @@ function Register(event) {
             console.log('Error:', error);
         });
 }
+const fileInput = document.getElementById('inputGroupFile02');
+const previewImage = document.getElementById('previewImage');
+
+fileInput.addEventListener('change', function() {
+    const file = fileInput.files[0];
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.addEventListener('load', function() {
+            previewImage.src = reader.result;
+            previewImage.style.display = 'block';
+        });
+
+        reader.readAsDataURL(file);
+    }
+});

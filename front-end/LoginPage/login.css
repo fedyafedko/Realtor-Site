@@ -1,0 +1,92 @@
+.btn-outline-danger {
+    border-color: black;
+    color: black;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:checked,
+.btn-outline-danger:active{
+    color: #ffffff;
+    background-color: #393E41;
+    border-color: #393E41;
+}
+.btn-primary {
+    background-color: #393E41;
+    border-color: #393E41;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #343434;
+    border-color: #343434;
+    color: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: #F5E9E2;
+    height: 90px;
+}
+#login_page{
+    background: #262626;
+}
+#login_form {
+    background: #F5E9E2;
+    height: 400px;
+    width: 300px;
+    border: 10px solid #262626;
+    border-style: double;
+    margin: auto;
+    padding: 10px 10px 10px 10px;
+    position: relative;
+    top: 30%;
+    transform: translateY(20%);
+}
+a:hover,
+a{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    left: 77%;
+    top: 30%;
+    border: 1px solid black;
+}
+#name{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    margin: -5px 30px;
+}
+#name_footer{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    top: 30%;
+    left: 30px;
+}
+#footer{
+    background: #F5E9E2;
+    height: 250px;
+    position: relative;
+    top: 150px;
+}
+#motto_image{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -30px;
+    left: 85%;
+}
+#motto{
+    position: relative;
+    width: 300px;
+    top: 70px;
+    left: 30px;
+    font-size: 20px;
+    font-family: Arial;
+}

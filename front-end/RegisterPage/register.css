@@ -2,6 +2,29 @@
     margin: 0;
     padding: 0;
 }
+.btn-outline-danger {
+    border-color: black;
+    color: black;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:checked,
+.btn-outline-danger:active{
+    color: #ffffff;
+    background-color: #393E41;
+    border-color: #393E41;
+}
+.btn-primary {
+    background-color: #393E41;
+    border-color: #393E41;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #343434;
+    border-color: #343434;
+    color: #ffffff;
+}
 header{
     background: #F5E9E2;
     height: 90px;
@@ -21,6 +44,15 @@ header{
     top: 20%;
     transform: translateY(20%);
 }
+.image{
+    background: white;
+    border-radius: 100%;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: 40px;
+    left: 720px;
+}
 a:hover,
 a{
     text-decoration: none;
@@ -37,6 +69,35 @@ a{
     font-size: 30px;
     font-family: "Arial Black";
     margin: -5px 30px;
+}
+#name_footer{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    top: 30%;
+    left: 30px;
+}
+#footer{
+    background: #F5E9E2;
+    height: 250px;
+    position: relative;
+    top: 150px;
+}
+#motto_image{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -30px;
+    left: 85%;
+}
+#motto{
+    position: relative;
+    width: 300px;
+    top: 70px;
+    left: 30px;
+    font-size: 20px;
+    font-family: Arial;
 }
 
 
