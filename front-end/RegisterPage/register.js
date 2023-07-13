@@ -17,6 +17,11 @@ function Register(event) {
         role: userType,
         image: image
     };
+    const dataLogin = {
+        login: login,
+        password: password
+    }
+    let token;
 
     fetch('http://localhost:5116/Auth/Register', {
         method: 'POST',
@@ -27,18 +32,39 @@ function Register(event) {
     })
         .then(function(response) {
             if (response.ok) {
-                console.log('Request done');
+                console.log('Registration request done');
+                return response.json();
+            } else {
+                throw new Error('Registration request failed');
+            }
+        })
+        .then(function(data) {
+            token = data;
+            console.log('API response (token):', token);
+
+            // Виконання запиту для авторизації з використанням токена
+            return fetch('http://localhost:5116/Auth/Login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dataLogin)
+            });
+        })
+        .then(function(response) {
+            if (response.ok) {
+                console.log('Login request done');
                 location.reload();
                 alert("You are successfully registered")
                 window.location.href = '../MainPage/mainAfterAuth.html';
-            }
-            else{
-                alert("You have entered incorrect data")
+            } else {
+                throw new Error('Login request failed');
             }
         })
         .catch(function(error) {
-            console.log('Error:', error);
+            console.error('Error:', error);
         });
+
 }
 
 fileInput.addEventListener('change', function() {

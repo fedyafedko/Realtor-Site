@@ -7,6 +7,7 @@ namespace RealtorAPI.Controllers;
 
 [Route("/")]
 [ApiController]
+[Authorize]
 public class ApartmentController : Controller
 {
     private readonly IApartmentService _service;
@@ -28,7 +29,7 @@ public class ApartmentController : Controller
     }
     [HttpPost("apartment")]
     [ActionName(nameof(GetById))]
-    [Authorize(Roles = "Realtor")]
+
     public async Task<IActionResult> InsertApartment(CreateApartmentDTO apartment)
     {
         try
@@ -43,7 +44,6 @@ public class ApartmentController : Controller
         }
     }
     [HttpDelete("{id}")]
-    [Authorize(Roles = "Realtor")]
     public async Task<IActionResult> DeleteCurrency(int id)
     {
         try
@@ -56,7 +56,6 @@ public class ApartmentController : Controller
         }
     }
     [HttpPut("{id}")]
-    [Authorize(Roles = "Realtor")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateApartmentDTO apartment)
     {
         try
