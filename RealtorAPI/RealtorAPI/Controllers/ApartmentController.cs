@@ -11,10 +11,12 @@ namespace RealtorAPI.Controllers;
 public class ApartmentController : Controller
 {
     private readonly IApartmentService _service;
+
     public ApartmentController(IApartmentService service)
     {
         _service = service;
     }
+
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -27,9 +29,9 @@ public class ApartmentController : Controller
             return BadRequest(ex.Message);
         }
     }
+
     [HttpPost("apartment")]
     [ActionName(nameof(GetById))]
-
     public async Task<IActionResult> InsertApartment(CreateApartmentDTO apartment)
     {
         try
@@ -43,6 +45,7 @@ public class ApartmentController : Controller
             return BadRequest(ex.Message);
         }
     }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteCurrency(int id)
     {
@@ -55,6 +58,7 @@ public class ApartmentController : Controller
             return BadRequest(ex.Message);
         }
     }
+
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UpdateApartmentDTO apartment)
     {
@@ -72,6 +76,7 @@ public class ApartmentController : Controller
             return BadRequest(ex.Message);
         }
     }
+
     [HttpGet]
     public IActionResult GetAll()
     {

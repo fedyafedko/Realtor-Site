@@ -37,6 +37,13 @@ public class AuthService : IAuthService
         return new AuthSuccessDTO(GenerateJwtToken(existingUser));
 
     }
+    public async Task<User?> GetByToken(string jwtToken)
+    {
+        var claims = GetClaimsFromJwtToken(jwtToken);
+        var userIdClaim = int.Parse(claims.FirstOrDefault(c => c.Type == "id")?.Value!);
+        var apartment = await _repository.Table.FindAsync(userIdClaim);
+        return apartment;
+    }
     public async Task<AuthSuccessDTO> RegisterAsync(RegisterUserDTO user)
     {
         string hashedPassword = _hasher.HashPassword(user.Password);

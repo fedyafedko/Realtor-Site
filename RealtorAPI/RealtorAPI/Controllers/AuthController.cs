@@ -24,4 +24,16 @@ public class AuthController : ControllerBase
     {
         return Ok(await _authService.LoginAsync(userDTO));
     }
+    [HttpGet("{jwtToken}")]
+    public async Task<IActionResult> GetById(string jwtToken)
+    {
+        try
+        {
+            return Ok(await _authService.GetByToken(jwtToken));
+        }
+        catch (Exception ex)
+        {
+            return BadRequest(ex.Message);
+        }
+    }
 }
