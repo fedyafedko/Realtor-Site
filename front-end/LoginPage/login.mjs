@@ -1,7 +1,6 @@
-let token;
+localStorage.clear();
 function Login(event) {
     event.preventDefault();
-
     const login = document.getElementById('floatingLogin').value;
     const password = document.getElementById('floatingPassword').value;
     const dataLogin = {

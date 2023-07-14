@@ -1,3 +1,4 @@
+const token = localStorage.getItem('token');
 function addApartment(event) {
     event.preventDefault();
     const address = document.getElementById('inputAddress').value;
@@ -28,7 +29,27 @@ function addApartment(event) {
         email: email,
         phone: phone
     };
-    console.log(data)
+    fetch('http://localhost:5116/apartment', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+        },
+        body: JSON.stringify(data)
+    })
+        .then(function(response) {
+            if (response.ok) {
+                console.log('Add apartment done');
+                location.reload();
+                window.location.href = '../MainPage/main.html';
+                return response.json();
+            } else {
+                alert("You have entered incorrect parameters");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }
 
 

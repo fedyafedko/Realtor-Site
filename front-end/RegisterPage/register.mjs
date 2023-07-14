@@ -1,9 +1,8 @@
 const fileInput = document.getElementById('fileInput');
 const previewImage = document.getElementById('previewImage');
-
+localStorage.clear();
 function Register(event) {
     event.preventDefault();
-
     const login = document.getElementById('floatingLogin').value;
     const password = document.getElementById('floatingPassword').value;
     const email = document.getElementById('floatingEmail').value;
@@ -36,12 +35,11 @@ function Register(event) {
                 console.log('Registration request done');
                 return response.json();
             } else {
-                throw new Error('Registration request failed');
+                alert("You have entered incorrect parameters");
             }
         })
         .then(function(data) {
-            token = data;
-            console.log('API response (token):', token);
+            console.log('API response (token):', data);
             return fetch('http://localhost:5116/Auth/Login', {
                 method: 'POST',
                 headers: {
@@ -60,7 +58,7 @@ function Register(event) {
             }
         })
         .then(function(data) {
-            localStorage.setItem('token', data);
+            localStorage.setItem('token', data.token);
             window.location.href = '../MainPage/main.html';
         })
         .catch(function(error) {

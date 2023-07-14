@@ -1,4 +1,5 @@
 const token = localStorage.getItem('token');
+
 fetch(`http://localhost:5116/Auth/${token}`, {
     method: 'GET'
 })

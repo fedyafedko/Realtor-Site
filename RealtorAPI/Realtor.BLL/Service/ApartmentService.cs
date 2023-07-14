@@ -36,31 +36,29 @@ public class ApartmentService : IApartmentService
         return _mapper.Map<CreateApartmentDTO>(entity);
     }
 
+    public List<ApartmentDTO> GetAllForRealtor(string jwtToken)
+    {
+        var claims = AuthService.GetClaimsFromJwtToken(jwtToken);
+        var userIdClaim = claims.FirstOrDefault(claim => claim.Type == "id");
+        var userRoleClaim = claims.FirstOrDefault(claim => claim.Type == "role");
+        
+        if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+            return _mapper
+                .Map<IEnumerable<ApartmentDTO>>(_repository.GetAll().Where(apartment => apartment.IdUser == userId))
+                .ToList();
+        else
+            throw new InvalidOperationException("Invalid user id in token");
+    }
+
     public async Task<bool> DeleteApartment(int id)
     {
         var apartment = await _repository.Table.FindAsync(id);
         return apartment != null && await _repository.DeleteAsync(apartment) > 0;
     }
 
-    public List<ApartmentDTO> GetAll(string jwtToken)
+    public List<ApartmentDTO> GetAll()
     {
-        var claims = AuthService.GetClaimsFromJwtToken(jwtToken);
-        var userIdClaim = claims.FirstOrDefault(claim => claim.Type == "id");
-        var userRoleClaim = claims.FirstOrDefault(claim => claim.Type == "role");
-
-        if (userRoleClaim != null && userRoleClaim.Value == "Realtor")
-        {
-            if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
-                return _mapper
-                    .Map<IEnumerable<ApartmentDTO>>(_repository.GetAll().Where(apartment => apartment.IdUser == userId))
-                    .ToList();
-            else
-                throw new InvalidOperationException("Invalid user id in token");
-        }
-        else
-        {
-            return _mapper.Map<IEnumerable<ApartmentDTO>>(_repository.GetAll()).ToList();
-        }
+        return _mapper.Map<IEnumerable<ApartmentDTO>>(_repository.GetAll()).ToList();
     }
 
     public async Task<ApartmentDTO?> GetById(int id)
