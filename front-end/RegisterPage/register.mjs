@@ -1,5 +1,6 @@
 const fileInput = document.getElementById('fileInput');
 const previewImage = document.getElementById('previewImage');
+
 function Register(event) {
     event.preventDefault();
 
@@ -41,8 +42,6 @@ function Register(event) {
         .then(function(data) {
             token = data;
             console.log('API response (token):', token);
-
-            // Виконання запиту для авторизації з використанням токена
             return fetch('http://localhost:5116/Auth/Login', {
                 method: 'POST',
                 headers: {
@@ -54,12 +53,15 @@ function Register(event) {
         .then(function(response) {
             if (response.ok) {
                 console.log('Login request done');
-                location.reload();
-                alert("You are successfully registered")
-                window.location.href = '../MainPage/mainAfterAuth.html';
+                return response.json();
             } else {
+                alert("No user found");
                 throw new Error('Login request failed');
             }
+        })
+        .then(function(data) {
+            localStorage.setItem('token', data);
+            window.location.href = '../MainPage/main.html';
         })
         .catch(function(error) {
             console.error('Error:', error);

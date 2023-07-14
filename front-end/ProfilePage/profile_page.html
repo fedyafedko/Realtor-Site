@@ -11,33 +11,61 @@
 <header id="header">
     <a class="header_button" id="auth" href="../RegisterPage/register.html">
         <img src="../Images/auth.png" alt=""> Profile</a>
-    <a class="header_button" id="about" href="https://djinni.co/jobs/my-profile/">About us</a>
+    <a class="header_button" id="main_page" href="../MainPage/main.html">Main</a>
     <div id="name">REALTOR</div>
 </header>
 <main id="main">
 <div id="account">My account</div>
     <div id="line">
-        <a class="tools" id="profile" href="../ProfilePage/profile_page.html">Profile</a>
-        <a class="tools" id="apartments" href="../RegisterPage/register.html">My apartments</a>
+        <a class="tools" id="profile" href="#" onclick="changeA(event)">Profile</a>
+        <a class="tools" id="my_apartments" href="#" onclick="changeA(event)">My apartments</a>
     </div>
-    <img class="image" id="previewImage" src="../Images/auth.png" alt="Preview Image">
     <div id="data">
-        <div class="container">
+        <img class="image" id="profileImage" src="../Images/auth.png" alt="Preview Image">
+        <div class="container" id="object1">
             <div class="box">
-                <img src="../Images/login.png" alt="" class="imageInfo">
+                <img src="../Images/login.png" alt="" class="imageData">
                 <span id="loginInfo"></span>
             </div>
             <div class="box">
-                <img src="../Images/role.png" alt="" class="imageInfo">
+                <img src="../Images/role.png" alt="" class="imageData">
                 <span id="roleInfo"></span>
             </div>
             <div class="box">
-                <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageInfo">
+                <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageData">
                 <span id="emailInfo"></span>
             </div>
             <div class="box">
-                <img src="../Images/phone.png" alt="" class="imageInfo">
+                <img src="../Images/phone.png" alt="" class="imageData">
                 <span id="phoneInfo"></span>
+            </div>
+        </div>
+    </div>
+    <div id="apartments" style="display: none;">
+        <div id="apart" >
+            <img id="aprtImage" src="#" alt="Preview Image">
+            <div id="info">
+                <p id="price">Price</p>
+                <p id="address">
+                    <img src="../Images/adress.png" alt="" class="imageInfo">
+                    Address
+                </p>
+                <p id="city">
+                    <img src="../Images/city.png" alt="" class="imageInfo">
+                    City
+                </p>
+                <p id="square">
+                    <img src="../Images/square.png" alt="" class="imageInfo">
+                    Square
+                </p>
+                <p id="email">
+                    <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageInfo">
+                    Email
+                </p>
+                <p id="phone">
+                    <img src="../Images/phone.png" alt="" class="imageInfo">
+                    Phone
+                </p>
             </div>
         </div>
     </div>
@@ -48,6 +76,22 @@
     <img id="motto_image" src="../Images/motto.png" alt="">
 </footer>
 </body>
+<script>
+    function changeA(event) {
+        event.preventDefault()
+        let object1 = document.getElementById('data');
+        let object2 = document.getElementById('apartments');
+
+        // Переключення стану об'єктів
+        if (object1.style.display === 'none') {
+            object1.style.display = 'block';
+            object2.style.display = 'none';
+        } else {
+            object1.style.display = 'none';
+            object2.style.display = 'block';
+        }
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 <script type="module" src="profile_page.mjs"></script>

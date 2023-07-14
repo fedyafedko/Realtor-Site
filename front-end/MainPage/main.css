@@ -14,6 +14,31 @@
     background-size: cover;
     background-attachment: fixed;
 }
+#tools{
+    position: relative;
+    top: 5%;
+}
+#toolsAfterRegister{
+    position: relative;
+    top: 5%;
+}
+.header_buttonAfterRegister{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    left: 75%;
+    border: 1px solid black;
+}
+#authAfterRegister{
+    left: 91%;
+}
+#authAfterRegister img{
+    max-width: 30px;
+    max-height: 30px;
+    vertical-align: middle;
+}
 .header_button{
     text-decoration: none;
     color: black;

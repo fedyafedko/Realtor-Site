@@ -64,21 +64,24 @@ header{
     font-family: "Arial Black";
     font-size: 18px;
 }
+.tools:hover{
+    color: white;
+}
 .image{
     background: white;
     border-radius: 100%;
     width: 150px;
     height: 150px;
     position: relative;
-    top: 250px;
-    left: 750px;
+    top: 25px;
+    left: 450px;
 }
 #data{
     border: 1px solid #F5E9E2;
     position: relative;
     width: 1000px;
-    height: 415px;
-    top: 30%;
+    height: 640px;
+    top: 25%;
     left: 20%;
 }
 .box {
@@ -86,18 +89,58 @@ header{
     font-family: "Arial Black";
     font-size: 20px;
     margin: 10px;
+    position: relative;
+    top:50px;
 
 }
 #container{
+    width: 1000px;
+    height: 500px;
+    position: relative;
+}
+.imageData{
+    width: 40px;
+    height: 40px;
+}
+#apartments{
+    position: relative;
+    top: 20%;
+    left: 7%;
+}
+#apart{
+    width: 250px;
+    height: 360px;
+    background: #F5E9E2;
+    position: relative;
+    top: 40px;
+    left: 40px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#info p {
+    margin: 0;
+    padding: 0px 10px;
+}
+#price{
+    font-family: "Arial Black";
+    font-size: 20px;
+}
+#info{
     width: 250px;
     height: 200px;
     position: relative;
 }
-.imageInfo{
-    width: 40px;
-    height: 40px;
+#previewImage{
+    width: 250px;
+    height: 200px;
 }
-
+#city{
+    display: inline-block;
+    margin: 0;
+}
+.imageInfo{
+    width: 15px;
+    height: 15px;
+}
 #name_footer{
     width: 70px;
     font-size: 30px;

@@ -5,8 +5,8 @@ function Login(event) {
     const login = document.getElementById('floatingLogin').value;
     const password = document.getElementById('floatingPassword').value;
     const dataLogin = {
-        login: login,
-        password: password
+        login: "VladFedko",
+        password: "Vlad1211"
     }
 
     fetch('http://localhost:5116/Auth/Login', {
@@ -26,12 +26,13 @@ function Login(event) {
             }
         })
         .then(function(data) {
-            token = data;
+            localStorage.setItem('token', data.token);
             location.reload();
-            window.location.href = '../MainPage/mainAfterAuth.html';
+            window.location.href = '../MainPage/main.html';
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
+
 

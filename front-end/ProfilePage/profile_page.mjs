@@ -1,6 +1,4 @@
-//const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQiLCJsb2dpbiI6IlZsYWRGZWRrbyIsInJvbGUiOiJSZWFsdG9yIiwianRpIjoiMjY0ZTQ3OGYtNzBjNS00MDIxLTg1OWYtYmEyNjYyZDcxN2E2IiwibmJmIjoxNjg5MjQyODk3LCJleHAiOjE2ODkyNTAwOTcsImlhdCI6MTY4OTI0Mjg5NywiaXNzIjoiZmVkeWFmZWRrby5jb20iLCJhdWQiOiJmZWR5YWZlZGtvLmNvbSJ9.jGyydH4sQVtr_NZZ6nSEljfPZQHyvzSqv-IfBDD-Z1Y';
-import { token1 } from '../LoginPage/login.mjs';
-console.log(token1);
+const token = localStorage.getItem('token');
 fetch(`http://localhost:5116/Auth/${token}`, {
     method: 'GET'
 })
