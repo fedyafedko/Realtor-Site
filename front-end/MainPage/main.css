@@ -52,13 +52,13 @@
 #name{
     color: white;
     padding: 10px;
-    font-size: 30px;
-    font-family: "Arial Black";
+    font-size: 40px;
+    font-family: "Lucida Calligraphy";
     position: relative;
-    width: 510px;
+    width: 670px;
     top: 200px;
     border: 1px solid white;
-    left: 550px;
+    left: 470px;
 }
 #nameForObject{
     color: white;
@@ -72,6 +72,7 @@
     border: 1px solid white;
 }
 #apart{
+    cursor: pointer;
     width: 250px;
     height: 360px;
     background: #F5E9E2;

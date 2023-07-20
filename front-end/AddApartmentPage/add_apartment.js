@@ -13,7 +13,7 @@ function addApartment(event) {
     const imagesString = imagesArray.join(',');
     const priceCurrency = document.querySelector('.select select').value;
     const price = document.querySelector('.input').value + priceCurrency;
-    const email = document.getElementById('inputEmail4').value;
+    const email = document.getElementById('inputEmail').value;
     const phone = document.getElementById('inputPhone').value;
 
     const data = {

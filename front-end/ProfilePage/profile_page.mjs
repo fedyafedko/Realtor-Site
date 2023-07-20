@@ -5,7 +5,9 @@ fetch(`http://localhost:5116/Auth/${token}`, {
 })
     .then(response => response.json())
     .then(data => {
-        // Оновлення вмісту елементів з отриманими даними з API
+        let image = document.getElementById("profileImage");
+        image.setAttribute('src', `../ImagesForUserProfile/${data.images}`);
+        console.log(`../ImagesForUserProfile/${data.images}`)
         document.getElementById('loginInfo').textContent =`Login: ${data.login}`;
         document.getElementById('roleInfo').textContent = `Role: ${data.role}`;
         document.getElementById('emailInfo').textContent = `Email: ${data.email}`;
@@ -14,3 +16,16 @@ fetch(`http://localhost:5116/Auth/${token}`, {
     .catch(error => {
         console.error('Error:', error);
     });
+const signOutButton = document.getElementById('sign_out');
+
+// Функція, яка викликається при натисканні на кнопку "Sign out"
+function handleSignOut() {
+    // Очистіть localStorage за допомогою методу clear()
+    localStorage.clear();
+
+    // Перенаправте користувача на сторінку, зазначену у посиланні
+    window.location.href = signOutButton.href;
+}
+
+// Додайте прослуховувач події на натискання кнопки "Sign out"
+signOutButton.addEventListener('click', handleSignOut);

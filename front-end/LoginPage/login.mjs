@@ -4,8 +4,8 @@ function Login(event) {
     const login = document.getElementById('floatingLogin').value;
     const password = document.getElementById('floatingPassword').value;
     const dataLogin = {
-        login: "VladFedko",
-        password: "Vlad1211"
+        login: login,
+        password: password
     }
 
     fetch('http://localhost:5116/Auth/Login', {

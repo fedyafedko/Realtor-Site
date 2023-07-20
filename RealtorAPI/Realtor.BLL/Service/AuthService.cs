@@ -44,6 +44,11 @@ public class AuthService : IAuthService
         var apartment = await _repository.Table.FindAsync(userIdClaim);
         return apartment;
     }
+    public async Task<User?> GetById(int id)
+    {
+        var apartment = await _repository.Table.FindAsync(id);
+        return apartment;
+    }
     public async Task<AuthSuccessDTO> RegisterAsync(RegisterUserDTO user)
     {
         string hashedPassword = _hasher.HashPassword(user.Password);

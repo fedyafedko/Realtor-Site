@@ -12,16 +12,18 @@
     <a class="header_button" id="auth" href="#">
         <img src="../Images/auth.png" alt=""> Profile</a>
     <a class="header_button" id="main_page" href="../MainPage/main.html">Main</a>
+    <a class="header_button" id="sign_out" href="../MainPage/main.html">Sign out</a>
     <div id="name">REALTOR</div>
 </header>
 <main id="main">
 <div id="account">My account</div>
+    <a id="add_apartment" href="../AddApartmentPage/add_apartment.html">Add Apartment</a>
     <div id="line">
-        <a class="tools" id="profile" href="#" onclick="changeA(event)">Profile</a>
-        <a class="tools" id="my_apartments" href="#" onclick="changeA(event)">My apartments</a>
+        <a class="tools" id="profile" href="#" onclick="changeObject(event)">Profile</a>
+        <a class="tools" id="my_apartments" href="#" onclick="changeObject(event)">My apartments</a>
     </div>
     <div id="data">
-        <img class="image" id="profileImage" src="../Images/auth.png" alt="Preview Image">
+        <img class="image" id="profileImage" src="../Images/auth.png" alt="profileImage">
         <div class="container" id="object1">
             <div class="box">
                 <img src="../Images/login.png" alt="" class="imageData">
@@ -77,12 +79,11 @@
 </footer>
 </body>
 <script>
-    function changeA(event) {
+    function changeObject(event) {
         event.preventDefault()
         let object1 = document.getElementById('data');
         let object2 = document.getElementById('apartments');
 
-        // Переключення стану об'єктів
         if (object1.style.display === 'none') {
             object1.style.display = 'block';
             object2.style.display = 'none';

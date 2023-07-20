@@ -3,6 +3,7 @@
 public class ApartmentDTO
 {
     public int Id { get; set; } 
+    public int IdUser { get; set; }
     public string Name { get; set; } = null!;
     public string Images { get; set; } = null!;
     public string Address { get; set; } = string.Empty;

@@ -8,4 +8,5 @@ public interface IAuthService
     Task<AuthSuccessDTO> LoginAsync(LoginUserDTO user);
     Task<AuthSuccessDTO> RegisterAsync(RegisterUserDTO user);
     Task<User?> GetByToken(string jwtToken);
+    Task<User?> GetById(int id);
 }
