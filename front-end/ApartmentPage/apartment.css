@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    background-color: #262626;
+    background-color: #ffffff;
 }
 header{
     background: #F5E9E2;
@@ -34,52 +34,48 @@ header{
     margin: -10px 30px;
 }
 #apartment_main{
-    height: 700px;
-    background-color: #262626;
+    height: 1000px;
+    background-color: #ffffff;
 }
 #apartment{
-    width: 500px;
-    height: 700px;
+    width: 800px;
+    height: 900px;
     background: #F5E9E2;
     position: relative;
-    top: 50px;
-    left: 50px;
+    top: 10%;
+    left: 40%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-.image{
-    background: white;
-    border-radius: 100%;
-    width: 150px;
-    height: 150px;
-    position: relative;
-    top: 25px;
-    left: 170px;
-}
 #data{
-    background-color: #F5E9E2;
+    background-color: #262626;
     position: relative;
+    width: 400px;
+    height: 500px;
+    top: -80%;
+    left: 50px;
+    border: 1px solid #393E41;
+}
+.box{
     width: 500px;
-    height: 700px;
-    top: -92%;
-    left: 63%;
-}
-.box {
-    color: black;
-    font-family: "Arial Black";
-    font-size: 20px;
-    margin: 10px;
+    height: auto;
     position: relative;
-    top:50px;
-
+    top: -90%;
 }
+.content{
+    width: 300px;
+}
+#description{
+    width: 300px;
+}
+
 #container{
     width: 1000px;
     height: 500px;
     position: relative;
 }
 .imageData{
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
 }
 
 

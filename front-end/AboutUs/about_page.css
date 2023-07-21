@@ -1,0 +1,176 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #ffffff;
+}
+header{
+    background: #F5E9E2;
+    height: 90px;
+}
+.header_button{
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    position: relative;
+    left: 75%;
+    top: 30%;
+    border: 1px solid black;
+}
+#auth{
+    left: 91%;
+}
+#auth img{
+    max-width: 30px;
+    max-height: 30px;
+    vertical-align: middle;
+}
+#name{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    margin: -10px 30px;
+}
+#apartment_main{
+    height: 1000px;
+    background-color: #ffffff;
+}
+#apartment{
+    width: 800px;
+    height: 900px;
+    background: #F5E9E2;
+    position: relative;
+    top: 10%;
+    left: 40%;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#data{
+    background-color: #262626;
+    position: relative;
+    width: 400px;
+    height: 500px;
+    top: -80%;
+    left: 50px;
+    border: 1px solid #393E41;
+}
+.box{
+    width: 500px;
+    height: auto;
+    position: relative;
+    top: -90%;
+}
+.content{
+    width: 300px;
+}
+#description{
+    width: 300px;
+}
+
+#container{
+    width: 1000px;
+    height: 500px;
+    position: relative;
+}
+.imageData{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+
+.photo-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.slider-container img {
+    width: 100%;
+    height: auto;
+}
+
+.prev-button,
+.next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: darkblue;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+#info p {
+    margin: 0;
+    padding: 1px 10px;
+}
+#price{
+    font-family: "Arial Black";
+    font-size: 30px;
+}
+#info{
+    width: 300px;
+    height: 250px;
+    position: relative;
+    font-size: 20px;
+}
+#city{
+    display: inline-block;
+    margin: 0;
+}
+.imageInfo{
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+#name_footer{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Arial Black";
+    position: relative;
+    top: 30%;
+    left: 30px;
+}
+#footer{
+    background: #F5E9E2;
+    height: 250px;
+    position: relative;
+    top: 150px;
+}
+#motto_image{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -30px;
+    left: 85%;
+}
+#motto{
+    position: relative;
+    width: 300px;
+    top: 70px;
+    left: 30px;
+    font-size: 20px;
+    font-family: Arial;
+}
