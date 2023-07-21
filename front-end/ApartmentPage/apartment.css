@@ -3,21 +3,21 @@
     padding: 0;
 }
 body{
-    background-color: #ffffff;
+    background-color: #EEE5E9;
 }
 header{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 90px;
 }
 .header_button{
     text-decoration: none;
-    color: black;
+    color: #EEE5E9;
     padding: 10px;
     margin: 20px;
     position: relative;
-    left: 75%;
+    left: 93%;
     top: 30%;
-    border: 1px solid black;
+    border: 1px solid #EEE5E9;
 }
 #auth{
     left: 91%;
@@ -30,31 +30,24 @@ header{
 #name{
     width: 70px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     margin: -10px 30px;
+    color: #EEE5E9;
 }
 #apartment_main{
     height: 1000px;
-    background-color: #ffffff;
+    background-color: #EEE5E9;
 }
 #apartment{
     width: 800px;
     height: 900px;
-    background: #F5E9E2;
+    background: #E3DBDB;
     position: relative;
     top: 10%;
     left: 40%;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
-#data{
-    background-color: #262626;
-    position: relative;
-    width: 400px;
-    height: 500px;
-    top: -80%;
-    left: 50px;
-    border: 1px solid #393E41;
-}
+
 .box{
     width: 500px;
     height: auto;
@@ -77,13 +70,6 @@ header{
     width: 20px;
     height: 20px;
 }
-
-
-
-
-
-
-
 .photo-slider {
     position: relative;
     width: 100%;
@@ -141,20 +127,32 @@ header{
     width: 20px;
     height: 20px;
 }
-
+.edit{
+    position: relative;
+    top: -40px;
+    left: 700px;
+}
+.imageEdit{
+    border: 1px solid #393E41;
+    opacity: 0.7;
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+}
 
 
 
 #name_footer{
     width: 70px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     position: relative;
     top: 30%;
     left: 30px;
+    color: #EEE5E9;
 }
 #footer{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 250px;
     position: relative;
     top: 150px;
@@ -173,4 +171,5 @@ header{
     left: 30px;
     font-size: 20px;
     font-family: Arial;
+    color: #EEE5E9;
 }

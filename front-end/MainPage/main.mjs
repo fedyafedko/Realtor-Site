@@ -43,7 +43,7 @@ fetch('http://localhost:5116/', {
             apartmentElement.style.cursor = 'pointer';
             apartmentElement.style.width = '250px';
             apartmentElement.style.height = '360px';
-            apartmentElement.style.background = '#F5E9E2';
+            apartmentElement.style.background = '#E3DBDB';
             apartmentElement.style.position = 'relative';
             apartmentElement.style.boxShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
             apartmentElement.style.margin = '10px'; // Відступи між блоками

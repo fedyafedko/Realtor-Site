@@ -9,108 +9,22 @@
 </head>
 <body>
 <header id="header">
-    <a class="header_button" id="auth" href="../ProfilePage/profile_page.html">
-        <img src="../Images/auth.png" alt=""> Profile</a>
     <a class="header_button" id="main_page" href="../MainPage/main.html">Main</a>
     <div id="name">REALTOR</div>
 </header>
-<main id="apartment_main">
-    <div id="apartment">
-        <div class="photo-slider">
-            <div class="slider-container">
-            </div>
-            <button class="prev-button">&#10094;</button>
-            <button class="next-button">&#10095;</button>
-        </div>
-        <div id="info">
-            <p id="price">Price</p>
-            <p id="address">
-                <img src="../Images/adress.png" alt="" class="imageInfo">
-                Address
-            </p>
-            <p id="city">
-                <img src="../Images/city.png" alt="" class="imageInfo">
-                City
-            </p>
-            <p id="square">
-                <img src="../Images/square.png" alt="" class="imageInfo">
-                Square
-            </p>
-            <p id="number_rooms">
-                <img src="../Images/rooms.png" alt="" class="imageInfo">
-                Rooms
-            </p>
-            <p id="floor">
-                <img src="../Images/floor.png" alt="" class="imageInfo">
-                Floor
-            </p>
-            <p id="email">
-                <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageInfo">
-                Floor
-            </p>
-            <p id="phone">
-                <img src="../Images/phone.png" alt="" class="imageInfo">
-                Floor
-            </p>
-        </div>
-    </div>
-    <div class="box">
-        <article class="media">
-            <div class="media-left">
-                <figure class="image is-128x128">
-                    <img class="image" src="../ImagesForUserProfile/755039177971965.jpg" alt="Image">
-                </figure>
-            </div>
-            <div class="media-content">
-                <div class="content">
-                    <strong id="loginInfo">John Smith</strong> <small id="emailInfo">@johnsmith</small>
-                    <p id="description">
-                        DLorem ipsum dolor dsfds sdfdsfs sdfdsfds sdfsfsfd sdfsdfsd sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-                    </p>
-                </div>
-            </div>
-        </article>
-    </div>
+<main id="about_main">
+    <p id="about">
+        Welcome to "<b>Realtor</b>" - Your Gateway to Finding Your Perfect Home!<br><br>
+
+        At <b>Realtor</b>, we understand that buying or selling a home is one of the most significant decisions you'll ever make. That's why we are dedicated to providing exceptional real estate services to our valued clients. With a team of experienced and passionate realtors, we aim to make your real estate journey a seamless and rewarding experience.<br><br>
+    </p>
 </main>
 <footer id="footer">
     <div id="name_footer">REALTOR</div>
     <div id="motto">Buy and Sell with REALTOR</div>
-    <img id="motto_image" src="../Images/motto.png" alt="">
+    <img id="motto_image" src="../Images/logo.png" alt="">
 </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-<script>
-    const boxElement = document.querySelector('.box');
-    const headerElement = document.querySelector('header');
-    const footerElement = document.querySelector('footer');
-
-    // Функція, яка оновлює позицію об'єкта відповідно до прокрутки сторінки
-    function updateBoxPosition() {
-        const headerHeight = headerElement.offsetHeight;
-        const footerHeight = footerElement.offsetHeight;
-        const windowHeight = window.innerHeight;
-        const contentHeight = boxElement.offsetHeight;
-        const scrollPosition = window.scrollY;
-
-        // Обчислити доступний діапазон для переміщення об'єкта
-        const availableRange = windowHeight - headerHeight - footerHeight - contentHeight;
-
-        // Обчислити нову позицію об'єкта
-        const newPosition = Math.min(Math.max(0, scrollPosition - headerHeight), availableRange);
-
-        // Встановити нову позицію об'єкта
-        boxElement.style.transform = `translateY(${newPosition}px)`;
-    }
-
-    // Викликати функцію оновлення позиції при прокрутці сторінки
-    window.addEventListener('scroll', updateBoxPosition);
-
-    // Викликати функцію оновлення позиції при зміні розміру вікна
-    window.addEventListener('resize', updateBoxPosition);
-
-    // Викликати функцію вперше, щоб забезпечити початкову позицію об'єкта
-    updateBoxPosition();
-
-</script>
 </html>

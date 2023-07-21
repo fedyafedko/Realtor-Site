@@ -3,21 +3,21 @@
     padding: 0;
 }
 body{
-    background-color: #262626;
+    background-color: #EEE5E9;
 }
 header{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 90px;
 }
 .header_button{
     text-decoration: none;
-    color: black;
+    color: #EEE5E9;
     padding: 10px;
     margin: 20px;
     position: relative;
     left: 75%;
     top: 30%;
-    border: 1px solid black;
+    border: 1px solid #EEE5E9;
 }
 #sign_out{
     width: 20px;
@@ -35,34 +35,35 @@ header{
 #name{
     width: 70px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     margin: -10px 30px;
+    color: #EEE5E9;
 }
 #add_apartment{
     text-decoration: none;
-    color: white;
+    color: #433A3F;
     padding: 10px;
     font-size: 30px;
     font-family: "Arial Black";
     position: relative;
     width: 250px;
     top: 15px;
-    border: 1px solid white;
+    border: 1px solid #433A3F;
     left: 79%;
 }
 #main{
     height: 1000px;
-    background-color: #262626;
+    background-color: #EEE5E9;
 }
 #account{
-    color: white;
+    color: #433A3F;
     padding: 10px;
     font-size: 30px;
     font-family: "Arial Black";
     position: relative;
     width: 250px;
     top: 70px;
-    border: 1px solid white;
+    border: 1px solid #433A3F;
     left: 50px;
 }
 #line {
@@ -161,13 +162,14 @@ header{
 #name_footer{
     width: 70px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     position: relative;
     top: 30%;
     left: 30px;
+    color: #EEE5E9;
 }
 #footer{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 250px;
     position: relative;
     top: 150px;
@@ -186,4 +188,5 @@ header{
     left: 30px;
     font-size: 20px;
     font-family: Arial;
+    color: #EEE5E9;
 }

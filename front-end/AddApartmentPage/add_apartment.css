@@ -3,11 +3,11 @@
     padding: 0;
 }
 #apartment_page{
-    background: #262626;
+    background: #EEE5E9;
     height: 1400px;
 }
 #add_apartment{
-    background: #F5E9E2;
+    background: #433A3F;
     width: 500px;
     height: 1000px;
     position: relative;
@@ -17,18 +17,18 @@
     border-style: double;
 }
 #header{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 100px;
 }
 a{
     text-decoration: none;
-    color: black;
+    color: #EEE5E9;
     padding: 10px;
     margin: 20px;
     position: relative;
     left: 75%;
     top: -10%;
-    border: 1px solid black;
+    border: 1px solid #EEE5E9;
 }
 #auth img{
     max-width: 30px;
@@ -36,27 +36,28 @@ a{
     vertical-align: middle;
 }
 #nameForObject{
-    color: white;
+    color: #433A3F;
     padding: 10px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     position: relative;
     top: 30px;
     left: 38%;
-    width: 350px;
-    border: 1px solid white;
+    width: 360px;
+    border: 1px solid #433A3F;
 }
 .name{
     width: 200px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     position: relative;
     top: 25%;
     left: 30px;
+    color: #EEE5E9;
 
 }
 #footer{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 250px;
     position: relative;
     top: 100px;
@@ -67,6 +68,7 @@ a{
     left: 30px;
     font-size: 20px;
     font-family: Arial;
+    color: #EEE5E9;
 }
 #motto_image{
     width: 150px;

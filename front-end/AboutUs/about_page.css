@@ -3,161 +3,57 @@
     padding: 0;
 }
 body{
-    background-color: #ffffff;
+    background-color: #EEE5E9;
 }
 header{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 90px;
 }
 .header_button{
     text-decoration: none;
-    color: black;
+    color: #EEE5E9;
     padding: 10px;
     margin: 20px;
     position: relative;
-    left: 75%;
+    left: 93%;
     top: 30%;
-    border: 1px solid black;
-}
-#auth{
-    left: 91%;
-}
-#auth img{
-    max-width: 30px;
-    max-height: 30px;
-    vertical-align: middle;
+    border: 1px solid #EEE5E9;
 }
 #name{
     width: 70px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     margin: -10px 30px;
+    color: #EEE5E9;
 }
-#apartment_main{
-    height: 1000px;
-    background-color: #ffffff;
+#about_main{
+    height: 700px;
+    background-color: #EEE5E9;
+    background-image: url("../Images/aboutUs.jpg");
+    background-size: cover;
 }
-#apartment{
-    width: 800px;
-    height: 900px;
-    background: #F5E9E2;
-    position: relative;
-    top: 10%;
-    left: 40%;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-#data{
-    background-color: #262626;
-    position: relative;
-    width: 400px;
-    height: 500px;
-    top: -80%;
-    left: 50px;
-    border: 1px solid #393E41;
-}
-.box{
+#about{
     width: 500px;
-    height: auto;
-    position: relative;
-    top: -90%;
-}
-.content{
-    width: 300px;
-}
-#description{
-    width: 300px;
-}
-
-#container{
-    width: 1000px;
-    height: 500px;
-    position: relative;
-}
-.imageData{
-    width: 20px;
-    height: 20px;
-}
-
-
-
-
-
-
-
-.photo-slider {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.slider-container {
-    display: flex;
-    transition: transform 0.3s ease-in-out;
-}
-
-.slider-container img {
-    width: 100%;
-    height: auto;
-}
-
-.prev-button,
-.next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    border: none;
-    color: darkblue;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-.prev-button {
-    left: 10px;
-}
-
-.next-button {
-    right: 10px;
-}
-#info p {
-    margin: 0;
-    padding: 1px 10px;
-}
-#price{
-    font-family: "Arial Black";
-    font-size: 30px;
-}
-#info{
-    width: 300px;
-    height: 250px;
-    position: relative;
+    color: #EEE5E9;
+    font-family: "Lucida Calligraphy";
     font-size: 20px;
+    position: relative;
+    top: 150px;
+    left: 40%;
 }
-#city{
-    display: inline-block;
-    margin: 0;
-}
-.imageInfo{
-    width: 20px;
-    height: 20px;
-}
-
-
-
-
 #name_footer{
     width: 70px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     position: relative;
     top: 30%;
     left: 30px;
+    color: #EEE5E9;
 }
 #footer{
-    background: #F5E9E2;
+    background: #433A3F;
     height: 250px;
     position: relative;
-    top: 150px;
 }
 #motto_image{
     width: 150px;
@@ -173,4 +69,5 @@ header{
     left: 30px;
     font-size: 20px;
     font-family: Arial;
+    color: #EEE5E9;
 }

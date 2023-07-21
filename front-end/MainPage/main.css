@@ -3,8 +3,8 @@
     padding: 0;
 }
 #main_page{
-    background: #262626;
-    height: 2000px;
+    background: #EEE5E9;
+    background-size: auto;
 }
 #main_header{
     background-image: url("../Images/header.png");
@@ -24,12 +24,12 @@
 }
 .header_buttonAfterRegister{
     text-decoration: none;
-    color: black;
     padding: 10px;
     margin: 20px;
     position: relative;
     left: 75%;
-    border: 1px solid black;
+    border: 1px solid #EEE5E9;
+    color: #EEE5E9;
 }
 #authAfterRegister{
     left: 91%;
@@ -41,13 +41,13 @@
 }
 .header_button{
     text-decoration: none;
-    color: black;
+    color: #EEE5E9;
     padding: 10px;
     margin: 20px;
     position: relative;
     left: 77%;
     top: 5%;
-    border: 1px solid black;
+    border: 1px solid #EEE5E9;
 }
 #name{
     color: white;
@@ -61,21 +61,20 @@
     left: 470px;
 }
 #nameForObject{
-    color: white;
+    color: #484A47;
     padding: 10px;
     font-size: 30px;
-    font-family: "Arial Black";
+    font-family: "Lucida Calligraphy";
     position: relative;
     top: 20px;
     left: 40px;
     width: 350px;
-    border: 1px solid white;
+    border: 1px solid #484A47;
 }
 #apart{
     cursor: pointer;
     width: 250px;
     height: 360px;
-    background: #F5E9E2;
     position: relative;
     top: 40px;
     left: 40px;
@@ -105,6 +104,37 @@
 .imageInfo{
     width: 15px;
     height: 15px;
+}
+#name_footer{
+    width: 70px;
+    font-size: 30px;
+    font-family: "Lucida Calligraphy";
+    position: relative;
+    top: 30%;
+    left: 30px;
+    color: #EEE5E9;
+}
+#footer{
+    background: #433A3F;
+    height: 250px;
+    position: relative;
+    top: 150px;
+}
+#motto_image{
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -30px;
+    left: 85%;
+}
+#motto{
+    position: relative;
+    width: 300px;
+    top: 70px;
+    left: 30px;
+    font-size: 20px;
+    font-family: Arial;
+    color: #EEE5E9;
 }
 
 
