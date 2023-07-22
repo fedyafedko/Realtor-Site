@@ -35,11 +35,9 @@ fetch('http://localhost:5116/', {
 
         // Цикл для кожного об'єкта в масиві даних
         data.forEach((apartment) => {
-            // Створення нового блоку для кожного елемента масиву даних
             const apartmentElement = document.createElement('div');
-            apartmentElement.id = 'apart'; // Задайте ID для блоку
+            apartmentElement.id = 'apart';
 
-            // Задайте стилі для блоку даних
             apartmentElement.style.cursor = 'pointer';
             apartmentElement.style.width = '250px';
             apartmentElement.style.height = '360px';
@@ -48,12 +46,10 @@ fetch('http://localhost:5116/', {
             apartmentElement.style.boxShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
             apartmentElement.style.margin = '10px'; // Відступи між блоками
 
-            // Задайте відступ для блоків (можете змінити значення в пікселях на те, що вам підходить)
             apartmentElement.style.margin = '20px';
 
             // Додавання обробника події для натискання на об'єкт
             apartmentElement.addEventListener('click', () => {
-                // Перенаправлення на нову сторінку і передача параметрів через URL
                 window.location.href = `../ApartmentPage/apartment.html?idApartment=${apartment.id}&idUser=${apartment.idUser}`;
             });
 

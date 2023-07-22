@@ -20,6 +20,9 @@
     background: #433A3F;
     height: 100px;
 }
+.form-label{
+    color: #EEE5E9;
+}
 a{
     text-decoration: none;
     color: #EEE5E9;
