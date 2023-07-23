@@ -27,14 +27,11 @@ fetch('http://localhost:5116/', {
     .then(response => response.json())
     .then(data => {
         const apartContainer = document.getElementById('apartContainer');
-        const imageUrls = data[0].images.split(',');
-
-        // Задайте стиль контейнера для гнучкого розміщення елементів
         apartContainer.style.display = 'flex';
-        apartContainer.style.flexWrap = 'wrap'; // Перенесення елементів на новий рядок, коли вони не поміщаються
+        apartContainer.style.flexWrap = 'wrap';
 
-        // Цикл для кожного об'єкта в масиві даних
         data.forEach((apartment) => {
+            let imageUrls = apartment.images.split(',');
             const apartmentElement = document.createElement('div');
             apartmentElement.id = 'apart';
 
@@ -44,16 +41,14 @@ fetch('http://localhost:5116/', {
             apartmentElement.style.background = '#E3DBDB';
             apartmentElement.style.position = 'relative';
             apartmentElement.style.boxShadow = '2px 2px 4px rgba(0, 0, 0, 0.5)';
-            apartmentElement.style.margin = '10px'; // Відступи між блоками
+            apartmentElement.style.margin = '10px';
 
             apartmentElement.style.margin = '20px';
 
-            // Додавання обробника події для натискання на об'єкт
             apartmentElement.addEventListener('click', () => {
                 window.location.href = `../ApartmentPage/apartment.html?idApartment=${apartment.id}&idUser=${apartment.idUser}`;
             });
 
-            // Отримання елементів для заповнення даними
             const previewImageElement = document.createElement('img');
             previewImageElement.id = 'previewImage';
             previewImageElement.src = `../ImageForApartment/${imageUrls[0]}`;
@@ -67,46 +62,43 @@ fetch('http://localhost:5116/', {
             infoElement.style.height = '200px';
             infoElement.style.position = 'relative';
 
-            // Заповнення об'єкта даними
             const priceElement = document.createElement('p');
             priceElement.id = 'price';
             priceElement.style.fontFamily = 'Arial Black';
             priceElement.style.fontSize = '20px';
             priceElement.innerText = apartment.price;
-            priceElement.style.display = 'block'; // Встановлення стилю block
+            priceElement.style.display = 'block';
 
             const addressElement = document.createElement('p');
             addressElement.id = 'address';
-            addressElement.style.display = 'block'; // Встановлення стилю block
+            addressElement.style.display = 'block';
             addressElement.style.margin = '0';
             addressElement.innerHTML = `<img src="../Images/adress.png" alt="" class="imageInfo"> ${apartment.address}`;
 
             const cityElement = document.createElement('p');
             cityElement.id = 'city';
-            cityElement.style.display = 'block'; // Встановлення стилю block
+            cityElement.style.display = 'block';
             cityElement.style.margin = '0';
             cityElement.innerHTML = `<img src="../Images/city.png" alt="" class="imageInfo"> ${apartment.city}`;
 
             const squareElement = document.createElement('p');
             squareElement.id = 'square';
-            squareElement.style.display = 'block'; // Встановлення стилю block
+            squareElement.style.display = 'block';
             squareElement.style.margin = '0';
             squareElement.innerHTML = `<img src="../Images/square.png" alt="" class="imageInfo"> ${apartment.square}`;
 
             const emailElement = document.createElement('p');
             emailElement.id = 'email';
-            emailElement.style.display = 'block'; // Встановлення стилю block
+            emailElement.style.display = 'block';
             emailElement.style.margin = '0';
             emailElement.innerHTML = `<img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageInfo"> ${apartment.email}`;
 
             const phoneElement = document.createElement('p');
             phoneElement.id = 'phone';
-            phoneElement.style.display = 'block'; // Встановлення стилю block
+            phoneElement.style.display = 'block';
             phoneElement.style.margin = '0';
             phoneElement.innerHTML = `<img src="../Images/phone.png" alt="" class="imageInfo"> ${apartment.phone}`;
 
-
-            // Додавання елементів до блоку даних
             infoElement.appendChild(priceElement);
             infoElement.appendChild(addressElement);
             infoElement.appendChild(cityElement);
@@ -117,7 +109,6 @@ fetch('http://localhost:5116/', {
             apartmentElement.appendChild(previewImageElement);
             apartmentElement.appendChild(infoElement);
 
-            // Додавання блоку даних до контейнера
             apartContainer.appendChild(apartmentElement);
         });
     })

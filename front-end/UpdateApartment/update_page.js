@@ -109,10 +109,12 @@ function editApartment(event) {
         .then(response => {
             if (response.ok) {
                 console.log('Edit apartment done');
-                // Виконати дії, які ви хочете здійснити при успішному редагуванні
+                alert("You edited apartment");
+                location.reload();
+                window.location.href = '../MainPage/main.html';
                 return response.json();
             } else {
-                throw new Error('Request failed.');
+                alert("You have entered incorrect parameters");
             }
         })
         .catch(error => {

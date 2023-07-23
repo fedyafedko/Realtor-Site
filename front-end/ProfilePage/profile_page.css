@@ -46,13 +46,13 @@ header{
     font-size: 30px;
     font-family: "Arial Black";
     position: relative;
-    width: 250px;
+    width: 300px;
     top: 15px;
     border: 1px solid #433A3F;
     left: 79%;
 }
 #main{
-    height: 1000px;
+    height: auto;
     background-color: #EEE5E9;
 }
 #account{
@@ -70,7 +70,7 @@ header{
     position: relative;
     width: 1300px;
     height: 40px;
-    top: 17%;
+    top: 100px;
     left: 10%;
     border-bottom: 1px solid #76818E;
 }
@@ -99,7 +99,7 @@ header{
     position: relative;
     width: 1000px;
     height: 640px;
-    top: 25%;
+    top: 150px;
     left: 20%;
 }
 .box {
@@ -120,23 +120,10 @@ header{
     width: 40px;
     height: 40px;
 }
-#apartments{
+#apartContainer{
     position: relative;
-    top: 20%;
+    top: 90px;
     left: 7%;
-}
-#apart{
-    width: 250px;
-    height: 360px;
-    background: #F5E9E2;
-    position: relative;
-    top: 40px;
-    left: 40px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-#info p {
-    margin: 0;
-    padding: 0px 10px;
 }
 #price{
     font-family: "Arial Black";

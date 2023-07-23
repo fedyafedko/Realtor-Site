@@ -23,8 +23,7 @@ public class UpdateApartmentValidator : AbstractValidator<UpdateApartmentDTO>
         RuleFor(d => d.Floor).GreaterThan(0);
 
         RuleFor(d => d.Description).NotEmpty()
-            .MinimumLength(1)
-            .MaximumLength(100);
+            .MinimumLength(1);
         RuleFor(d => d.Price).NotEmpty()
             .MinimumLength(1)
             .MaximumLength(100);

@@ -26,16 +26,13 @@ fetch(`http://localhost:5116/${idApartment}`, {
 
         const imageUrls = data.images.split(',');
         for (let i = 0; i < imageUrls.length; i++) {
-            // Створити новий <img> елемент
             const imgElement = document.createElement("img");
             imgElement.src = `../ImageForApartment/${imageUrls[i]}`;
             imgElement.alt = 'Image';
 
-            // Додати новий <img> елемент до контейнера слайдера
             sliderContainer.appendChild(imgElement);
         }
 
-        // Пролистування слайдів
         const prevButton = document.querySelector('.prev-button');
         const nextButton = document.querySelector('.next-button');
         const totalImages = sliderContainer.children.length;
@@ -80,13 +77,10 @@ function updateBoxPosition() {
     const headerHeight = headerElement.offsetHeight;
     const scrollPosition = window.scrollY;
 
-    // Обчислити доступний діапазон для переміщення об'єкта
     const availableRange = 1000;
 
-    // Обчислити нову позицію об'єкта
     const newPosition = Math.min(Math.max(0, scrollPosition - headerHeight), availableRange);
 
-    // Встановити нову позицію об'єкта
     boxElement.style.transform = `translateY(${newPosition}px)`;
 }
 
