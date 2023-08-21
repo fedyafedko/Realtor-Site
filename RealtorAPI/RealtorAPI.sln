@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Realtor.BLL", "Realtor.BLL\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealtorAPI.Common", "RealtorAPI.Common\RealtorAPI.Common.csproj", "{15FC8C7F-409D-420D-9158-D829152C4F91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{564A539D-B735-4D8A-882B-6D808CFAEA7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{15FC8C7F-409D-420D-9158-D829152C4F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15FC8C7F-409D-420D-9158-D829152C4F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15FC8C7F-409D-420D-9158-D829152C4F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{564A539D-B735-4D8A-882B-6D808CFAEA7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564A539D-B735-4D8A-882B-6D808CFAEA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564A539D-B735-4D8A-882B-6D808CFAEA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564A539D-B735-4D8A-882B-6D808CFAEA7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

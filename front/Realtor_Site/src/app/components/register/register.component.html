@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Realtor</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="register.css">
-</head>
 <body id="register_page">
 <header>
   <a id="main" href="../MainPage/main.html">Main</a>
@@ -51,7 +43,44 @@
   <div id="motto">Buy and Sell with REALTOR</div>
   <img id="motto_image" src="../../front/Realtor-Site/src/app/Images/logo.png" alt="">
 </footer>
+</body><body id="register_page">
+<header>
+  <a id="main" href="../MainPage/main.html">Main</a>
+  <a id="auth" href="../LoginPage/login.html">Log in</a>
+  <a id="about" href="../AboutUs/about_page.html">About us</a>
+  <div id="name">REALTOR</div>
+</header>
+<main>
+  <div class="container">
+    <label for="fileInput">
+      <img class="image" id="previewImage" src="../Images/auth.png" alt="Preview Image">
+      <img class="hoverImage" src="../Images/camera.png" alt="Hover Image">
+    </label>
+    <input type="file" id="fileInput" style="display: none;">
+  </div>
+  <form action="" method="post" id="register_form">
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingLogin" placeholder="Password">
+      <label for="floatingLogin">Login</label>
+    </div><br>
+    <div class="form-floating">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div><br>
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+      <label for="floatingEmail">Email address</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingPhone" placeholder="name@example.com">
+      <label for="floatingPhone">Phone</label>
+    </div>
+    <input type="radio" class="btn-check" name="options-outlined" id="User" autocomplete="off">
+    <label class="btn btn-outline-danger" for="User">User</label>
+    <input type="radio" class="btn-check" name="options-outlined" id="Realtor" autocomplete="off">
+    <label class="btn btn-outline-danger" for="Realtor">Realtor</label><br><br>
+    <button type="submit" class="btn btn-primary" onclick="Register(event)">Sign up</button>
+    <button type="reset" class="btn btn-primary">Reset</button>
+  </form>
+</main>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-<script src="register.mjs"></script>
-</html>

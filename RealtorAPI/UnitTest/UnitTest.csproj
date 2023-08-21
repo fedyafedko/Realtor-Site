@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Realtor.BLL\Realtor.BLL.csproj" />
+      <ProjectReference Include="..\Realtor.DAL\Realtor.DAL.csproj" />
+      <ProjectReference Include="..\RealtorAPI\RealtorAPI.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.1" />
+      <PackageReference Include="Moq" Version="4.20.69" />
+      <PackageReference Include="xunit" Version="2.5.1-pre.20" />
+    </ItemGroup>
+
+</Project>

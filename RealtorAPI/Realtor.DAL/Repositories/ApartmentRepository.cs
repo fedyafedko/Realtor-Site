@@ -5,7 +5,7 @@ using Realtor.DAL.Repositories.Interfaces;
 
 namespace Realtor.DAL.Repositories;
 
-public class ApartmentRepository : Repo<Apartment, string>, IApartmentsRepository
+public class ApartmentRepository : Repo<Apartment, int>, IApartmentsRepository
 {
     public ApartmentRepository(ApplicationDbContext applicationDbContext) : base(applicationDbContext) { }
 }

@@ -49,7 +49,7 @@ public class ApartmentController : Controller
 
     [HttpDelete("{id}")]
     [Authorize(Roles = "Realtor")]
-    public async Task<IActionResult> DeleteCurrency(int id)
+    public async Task<IActionResult> DeleteApartment(int id)
     {
         try
         {
@@ -63,7 +63,7 @@ public class ApartmentController : Controller
 
     [HttpPut("{id}")]
     [Authorize(Roles = "Realtor")]
-    public async Task<IActionResult> Update(int id, [FromBody] UpdateApartmentDTO apartment)
+    public async Task<IActionResult> UpdateApartment(int id, [FromBody] UpdateApartmentDTO apartment)
     {
         try
         {
