@@ -1,0 +1,77 @@
+<head>
+  <meta charset="UTF-8">
+  <title>Realtor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+<header id="header">
+  <a class="header_button" id="auth" href="#">
+    <img src="../../../assets/Images/auth.png" alt=""> Profile</a>
+  <a class="header_button" id="main_page" routerLink="/">Main</a>
+  <a class="header_button" id="sign_out" (click)="signOut()">Sign out</a>
+  <div id="name">REALTOR</div>
+</header>
+<main id="main">
+  <div id="account">My account</div>
+  <a *ngIf="this.user.role == 'Realtor'" id="add_apartment" routerLink="/add-apartment">Add Apartment</a>
+  <div id="line">
+    <a class="tools" id="profile"(click)="showProfile()">Profile</a>
+    <a class="tools" id="my_apartments"  (click)="showMyApartments()">My apartments</a>
+  </div>
+  <div id="data" *ngIf="showData">
+    <img class="image" id="profileImage"  [src]=this.user.image alt="profileImage">
+    <div class="container" id="object1">
+      <div class="box">
+        <img src="assets/Images/login.png" alt="" class="imageData">
+        <span id="loginInfo" class ="dataUser" [innerHTML]="this.user.login"></span>
+      </div>
+      <div class="box">
+        <img src="../../../assets/Images/role.png" alt="" class="imageData">
+        <span id="roleInfo" class ="dataUser" [innerHTML]="this.user.role"></span>
+      </div>
+      <div class="box">
+        <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageData">
+        <span id="emailInfo" class ="dataUser" [innerHTML]="this.user.email"></span>
+      </div>
+      <div class="box">
+        <img src="../../../assets/Images/phone.png" alt="" class="imageData">
+        <span id="phoneInfo" class ="dataUser" [innerHTML]="this.user.phone" ></span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="showApartments" id="apartContainer">
+    <div class="apartment-container">
+      <div id="apart" *ngFor="let property of this.apartment" (click)="redirectToOtherPage(property.id, property.idUser)">
+        <img id="previewImage" [src]=splitImages(property.images) alt="Preview Image">
+        <div id="info">
+          <p id="price">{{ property.price}}</p>
+          <p id="address">
+            <img src="../../../assets/Images/adress.png" alt="" class="imageInfo">
+            {{ property.address }}
+          </p>
+          <p id="city">
+            <img src="../../../assets/Images/city.png" alt="" class="imageInfo">
+            {{ property.city }}
+          </p>
+          <p id="square">
+            <img src="../../../assets/Images/square.png" alt="" class="imageInfo">
+            {{ property.square }}
+          </p>
+          <p id="email">
+            <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageInfo">
+            {{ property.email }}
+          </p>
+          <p id="phone">
+            <img src="../../../assets/Images/phone.png" alt="" class="imageInfo">
+            {{ property.phone }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+

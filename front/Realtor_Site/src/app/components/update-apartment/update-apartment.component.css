@@ -1,0 +1,152 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #EEE5E9;
+}
+header{
+  background: #433A3F;
+  height: 90px;
+}
+.header_button{
+  text-decoration: none;
+  color: #EEE5E9;
+  padding: 10px;
+  margin: 20px;
+  position: relative;
+  left: 93%;
+  top: 30%;
+  border: 1px solid #EEE5E9;
+}
+#auth{
+  left: 91%;
+}
+#auth img{
+  max-width: 30px;
+  max-height: 30px;
+  vertical-align: middle;
+}
+#title{
+  width: 70px;
+  font-size: 30px;
+  font-family: "Lucida Calligraphy";
+  margin: -10px 30px;
+  color: #EEE5E9;
+}
+#apartment_main{
+  height: 1300px;
+  background-color: #EEE5E9;
+}
+#apartment{
+  width: 800px;
+  height: auto;
+  background: #E3DBDB;
+  position: relative;
+  top: 50px;
+  left: 28%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+#square,
+#floor,
+#number_rooms{
+  width: 100px;
+}
+.col-12,
+.mb-3{
+  width: 400px;
+}
+#container{
+  width: 1000px;
+  height: 500px;
+  position: relative;
+}
+.imageData{
+  width: 20px;
+  height: 20px;
+}
+.photo-slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-container {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-container img {
+  width: 100%;
+  height: auto;
+}
+.btn{
+  margin-right: 5px;
+}
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: darkblue;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+#price{
+  font-family: "Arial Black";
+  font-size: 16px;
+}
+#info{
+  padding: 10px;
+
+}
+#city{
+  display: inline-block;
+  margin: 0;
+}
+.imageInfo{
+  width: 20px;
+  height: 20px;
+}
+.edit{
+  background-color: #E3DBDB;
+  position: relative;
+  top: -40px;
+  left: 700px;
+}
+.imageEdit{
+  border: 1px solid #393E41;
+  opacity: 0.7;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+.image{
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+}
+input.ng-touched.ng-invalid {
+  border: solid red 2px;
+  background-image: url('../../../assets/Images/invalid.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+input.ng-touched.ng-valid{
+  border: solid green 2px;
+  background-image: url('../../../assets/Images/valid.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}

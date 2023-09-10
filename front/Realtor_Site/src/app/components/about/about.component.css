@@ -1,0 +1,43 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #EEE5E9;
+}
+header{
+  background: #433A3F;
+  height: 90px;
+}
+.header_button{
+  text-decoration: none;
+  color: #EEE5E9;
+  padding: 10px;
+  margin: 20px;
+  position: relative;
+  left: 93%;
+  top: 30%;
+  border: 1px solid #EEE5E9;
+}
+#name{
+  width: 70px;
+  font-size: 30px;
+  font-family: "Lucida Calligraphy";
+  margin: -10px 30px;
+  color: #EEE5E9;
+}
+#about_main{
+  height: 700px;
+  background-color: #EEE5E9;
+  background-image: url("../../../assets/Images/aboutUs.jpg");
+  background-size: cover;
+}
+#about{
+  width: 500px;
+  color: #EEE5E9;
+  font-family: "Lucida Calligraphy";
+  font-size: 20px;
+  position: relative;
+  top: 150px;
+  left: 40%;
+}

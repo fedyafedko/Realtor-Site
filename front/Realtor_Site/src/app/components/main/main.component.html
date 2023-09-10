@@ -1,19 +1,49 @@
 <body id="main_page">
 <header id="main_header">
-  <div id="tools">
-    <a class="header_button" id="register" href="/register">Register</a>
-    <a class="header_button" id="auth" href="../LoginPage/login.html">Log in</a>
-    <a class="header_button" id="about" href="../AboutUs/about_page.html">About us</a>
+  <div id="tools" *ngIf="!auth.isAuthenticated(); else toolsAfterRegister">
+    <a class="header_button" id="register" routerLink="/register">Register</a>
+    <a class="header_button" id="auth" routerLink="/login">Log in</a>
+    <a class="header_button" id="about" routerLink="/about">About us</a>
   </div>
-  <div id="toolsAfterRegister" style="display: none;">
-    <a class="header_buttonAfterRegister" id="authAfterRegister" href="../ProfilePage/profile_page.html">
-      <img src="../../Images/auth.png" alt=""> Profile</a>
-    <a class="header_buttonAfterRegister" id="aboutAfterRegister" href="../AboutUs/about_page.html">About us</a>
-  </div>
+  <ng-template #toolsAfterRegister>
+    <div id="toolsAfterRegister">
+      <a class="header_buttonAfterRegister" id="authAfterRegister" routerLink="/profile"
+         [queryParams]="{'id':'id'}">
+        <img src="../../../assets/Images/auth.png" alt=""> Profile</a>
+      <a class="header_buttonAfterRegister" id="aboutAfterRegister" routerLink="/about">About us</a>
+    </div>
+  </ng-template>
   <div id="name">Real estate agency REALTOR</div>
 </header>
 <main id="main">
   <div id="nameForObject">Browse apartments</div>
-  <div id="apartContainer"></div>
+  <div class="apartment-container">
+  <div id="apart" *ngFor="let property of this.apartment" (click)="redirectToOtherPage(property.id, property.idUser)">
+    <img id="previewImage" [src]=splitImages(property.images) alt="Preview Image">
+    <div id="info">
+      <p id="price">{{ property.price}}</p>
+      <p id="address">
+        <img src="../../../assets/Images/adress.png" alt="" class="imageInfo">
+        {{ property.address }}
+      </p>
+      <p id="city">
+        <img src="../../../assets/Images/city.png" alt="" class="imageInfo">
+        {{ property.city }}
+      </p>
+      <p id="square">
+        <img src="../../../assets/Images/square.png" alt="" class="imageInfo">
+        {{ property.square }}
+      </p>
+      <p id="email">
+        <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/email_icon-icons.com_64925.png" alt="" class="imageInfo">
+        {{ property.email }}
+      </p>
+      <p id="phone">
+        <img src="../../../assets/Images/phone.png" alt="" class="imageInfo">
+        {{ property.phone }}
+      </p>
+    </div>
+  </div>
+  </div>
 </main>
 </body>

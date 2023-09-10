@@ -11,13 +11,12 @@
   background: #433A3F;
   height: 250px;
   position: relative;
-  top: 150px;
 }
 #motto_image{
   width: 150px;
   height: 150px;
   position: relative;
-  top: -30px;
+  top: -35px;
   left: 85%;
 }
 #motto{

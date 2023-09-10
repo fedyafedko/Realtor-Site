@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+#apartment_page{
+  background: #EEE5E9;
+  height: 1400px;
+}
+#add_apartment{
+  background: #433A3F;
+  width: 500px;
+  height: 1000px;
+  position: relative;
+  top: 70px;
+  left: 34%;
+  border: 10px solid #262626;
+  border-style: double;
+}
+#header{
+  background: #433A3F;
+  height: 100px;
+}
+.form-label{
+  color: #EEE5E9;
+}
+a{
+  text-decoration: none;
+  color: #EEE5E9;
+  padding: 10px;
+  margin: 20px;
+  position: relative;
+  left: 75%;
+  top: -10%;
+  border: 1px solid #EEE5E9;
+}
+#auth img{
+  max-width: 30px;
+  max-height: 30px;
+  vertical-align: middle;
+}
+#nameForObject{
+  color: #433A3F;
+  padding: 10px;
+  font-size: 30px;
+  font-family: "Lucida Calligraphy";
+  position: relative;
+  top: 30px;
+  left: 38%;
+  width: 360px;
+  border: 1px solid #433A3F;
+}
+.name{
+  width: 200px;
+  font-size: 30px;
+  font-family: "Lucida Calligraphy";
+  position: relative;
+  top: 25%;
+  left: 30px;
+  color: #EEE5E9;
+}
+.btn{
+  margin-right: 5px;
+}
+input.ng-touched.ng-invalid {
+  border: solid red 2px;
+  background-image: url('../../../assets/Images/invalid.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
+input.ng-touched.ng-valid{
+  border: solid green 2px;
+  background-image: url('../../../assets/Images/valid.png');
+  background-position: right 10px center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+}
