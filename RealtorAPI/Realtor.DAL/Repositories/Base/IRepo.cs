@@ -2,7 +2,7 @@
 
 namespace Realtor.DAL.Repositories.Base;
 
-public interface IRepo<TEntity, TKey> : IDisposable 
+public interface IRepo<TEntity, TKey> 
     where TEntity : class
     where TKey : IEquatable<TKey>
 {

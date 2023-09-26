@@ -1,9 +1,9 @@
-﻿namespace RealtorAPI.Common.DTO;
+﻿namespace RealtorAPI.Common.DTO.Apartment;
 
 public class ApartmentDTO
 {
     public int Id { get; set; } 
-    public int IdUser { get; set; }
+    public int UserId { get; set; }
     public string Name { get; set; } = null!;
     public string Images { get; set; } = null!;
     public string Address { get; set; } = string.Empty;

@@ -3,26 +3,29 @@ using Microsoft.IdentityModel.Tokens;
 using Realtor.BLL.Interfaces;
 using Realtor.DAL.Entities;
 using Realtor.DAL.Repositories;
-using RealtorAPI.Common.DTO;
 using RealtorAPI.Common.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Realtor.DAL.Repositories.Interfaces;
+using RealtorAPI.Common.DTO.Auth;
 
 
 namespace Realtor.BLL.Service;
+
 public class AuthService : IAuthService
 {
-    private readonly UserRepository _repository;
+    private readonly IUserRepository _repository;
     private readonly IPasswordHasher _hasher;
     private readonly JwtSettings _settings;
 
-    public AuthService(UserRepository repo, IPasswordHasher hasher, IOptions<JwtSettings> settings)
+    public AuthService(IUserRepository repo, IPasswordHasher hasher, IOptions<JwtSettings> settings)
     {
-        _repository = repo;
+        _repository = repo ?? throw new ArgumentNullException(nameof(repo));
         _hasher = hasher;
         _settings = settings.Value;
     }
+
     public async Task<AuthSuccessDTO> LoginAsync(LoginUserDTO user)
     {
         string hashedPassword = _hasher.HashPassword(user.Password);
@@ -35,20 +38,8 @@ public class AuthService : IAuthService
             throw new UnauthorizedAccessException(user.Login);
 
         return new AuthSuccessDTO(GenerateJwtToken(existingUser));
+    }
 
-    }
-    public async Task<User?> GetByToken(string jwtToken)
-    {
-        var claims = GetClaimsFromJwtToken(jwtToken);
-        var userIdClaim = int.Parse(claims.FirstOrDefault(c => c.Type == "id")?.Value!);
-        var apartment = await _repository.Table.FindAsync(userIdClaim);
-        return apartment;
-    }
-    public async Task<User?> GetById(int id)
-    {
-        var apartment = await _repository.Table.FindAsync(id);
-        return apartment;
-    }
     public async Task<AuthSuccessDTO> RegisterAsync(RegisterUserDTO user)
     {
         string hashedPassword = _hasher.HashPassword(user.Password);
@@ -70,6 +61,7 @@ public class AuthService : IAuthService
 
         return new AuthSuccessDTO(GenerateJwtToken(newUser));
     }
+
     private string GenerateJwtToken(User user)
     {
         var jwtTokenHandler = new JwtSecurityTokenHandler();
@@ -93,15 +85,5 @@ public class AuthService : IAuthService
         var token = jwtTokenHandler.CreateToken(tokenDescriptor);
         var jwtToken = jwtTokenHandler.WriteToken(token);
         return jwtToken;
-    }
-    public static IEnumerable<Claim> GetClaimsFromJwtToken(string jwtToken)
-    {
-        var jwtTokenHandler = new JwtSecurityTokenHandler();
-        var token = jwtTokenHandler.ReadToken(jwtToken) as JwtSecurityToken;
-
-        if (token == null)
-            throw new NullReferenceException("Token is not valid");
-
-        return token.Claims;
     }
 }

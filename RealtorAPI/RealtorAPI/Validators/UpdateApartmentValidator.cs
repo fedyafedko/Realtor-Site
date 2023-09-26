@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using RealtorAPI.Common.DTO;
+using RealtorAPI.Common.DTO.Apartment;
 
 namespace RealtorAPI.Validators;
 

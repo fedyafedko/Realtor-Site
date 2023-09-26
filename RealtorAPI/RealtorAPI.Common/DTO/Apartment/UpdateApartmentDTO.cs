@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace RealtorAPI.Common.DTO.Apartment;
 
-namespace RealtorAPI.Common.DTO;
-
-public class CreateApartmentDTO
+public class UpdateApartmentDTO
 {
     public string Name { get; set; } = null!;
     public string Images { get; set; } = null!;

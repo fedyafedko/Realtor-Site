@@ -1,5 +1,4 @@
-﻿using Realtor.DAL.Entities;
-using RealtorAPI.Common.DTO;
+﻿using RealtorAPI.Common.DTO.Auth;
 
 namespace Realtor.BLL.Interfaces;
 
@@ -7,6 +6,4 @@ public interface IAuthService
 {
     Task<AuthSuccessDTO> LoginAsync(LoginUserDTO user);
     Task<AuthSuccessDTO> RegisterAsync(RegisterUserDTO user);
-    Task<User?> GetByToken(string jwtToken);
-    Task<User?> GetById(int id);
 }

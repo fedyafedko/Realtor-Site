@@ -7,6 +7,7 @@ using Realtor.BLL.Service;
 using Realtor.DAL.Entities;
 using Realtor.DAL.Repositories.Interfaces;
 using RealtorAPI.Common.DTO;
+using RealtorAPI.Common.DTO.Apartment;
 using RealtorAPI.Controllers;
 using Xunit;
 
@@ -33,7 +34,7 @@ public class RealtorControllerTest
             {
                 new Apartment()
                 {
-                    IdUser = 1,
+                    UserId = 1,
                     Name = "Sell flat",
                     Address = "Agenl 20",
                     City = "Kyiv",
@@ -48,7 +49,7 @@ public class RealtorControllerTest
                 },
                 new Apartment()
                 {
-                    IdUser = 2,
+                    UserId = 2,
                     Name = "Sell house",
                     Address = "Trysckavetska 10",
                     City = "Kyiv",
@@ -66,7 +67,7 @@ public class RealtorControllerTest
         List<ApartmentDTO> content = result?.Value as List<ApartmentDTO> ?? new List<ApartmentDTO>();
         Assert.IsType<List<ApartmentDTO>>(content);
         Assert.Equal(2, content.Count);
-        Assert.Equal(1, content[0].IdUser);
+        Assert.Equal(1, content[0].UserId);
         Assert.Equal("Sell flat", content[0].Name);
         Assert.Equal("Agenl 20", content[0].Address);
         Assert.Equal("Kyiv", content[0].City);
@@ -79,7 +80,7 @@ public class RealtorControllerTest
         Assert.Equal("example@gmail.com", content[0].Email);
         Assert.Equal("+380111111111", content[0].Phone);
 
-        Assert.Equal(2, content[1].IdUser);
+        Assert.Equal(2, content[1].UserId);
         Assert.Equal("Sell house", content[1].Name);
         Assert.Equal("Trysckavetska 10", content[1].Address);
         Assert.Equal("Kyiv", content[1].City);

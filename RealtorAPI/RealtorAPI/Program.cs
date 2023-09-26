@@ -27,12 +27,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 
 // Repositories
 builder.Services.AddScoped<IApartmentsRepository, ApartmentRepository>();
-builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 
 // Service
 builder.Services.AddScoped<IApartmentService, ApartmentService>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Validators
 builder.Services.AddFluentValidationAutoValidation();

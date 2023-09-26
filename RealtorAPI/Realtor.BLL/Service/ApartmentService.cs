@@ -2,7 +2,7 @@
 using Realtor.BLL.Interfaces;
 using Realtor.DAL.Entities;
 using Realtor.DAL.Repositories.Interfaces;
-using RealtorAPI.Common.DTO;
+using RealtorAPI.Common.DTO.Apartment;
 
 namespace Realtor.BLL.Service;
 
@@ -17,42 +17,28 @@ public class ApartmentService : IApartmentService
         _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
     }
 
-    public async Task<CreateApartmentDTO> AddApartment(CreateApartmentDTO apartment, string jwtToken)
+    public async Task<CreateApartmentDTO> AddApartment(int userId, CreateApartmentDTO apartment)
     {
-        Apartment entity = _mapper.Map<Apartment>(apartment);
+        var entity = _mapper.Map<Apartment>(apartment);
 
-        var claims = AuthService.GetClaimsFromJwtToken(jwtToken);
-
-        if (await _repository.Table.FindAsync(entity.Id) != null)
+        if (await _repository.FindAsync(entity.Id) != null)
             throw new InvalidOperationException("Entity with such key already exists in the database");
 
-        var userIdClaim = claims.FirstOrDefault(claim => claim.Type == "id");
-        if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
-            entity.IdUser = userId;
-        else
-            throw new InvalidOperationException("Invalid user id in token");
-
+        entity.UserId = userId;
         await _repository.AddAsync(entity);
         return _mapper.Map<CreateApartmentDTO>(entity);
     }
 
-    public List<ApartmentDTO> GetAllForRealtor(string jwtToken)
+    public List<ApartmentDTO> GetAllForRealtor(int userId)
     {
-        var claims = AuthService.GetClaimsFromJwtToken(jwtToken);
-        var userIdClaim = claims.FirstOrDefault(claim => claim.Type == "id");
-        var userRoleClaim = claims.FirstOrDefault(claim => claim.Type == "role");
-        
-        if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
-            return _mapper
-                .Map<IEnumerable<ApartmentDTO>>(_repository.GetAll().Where(apartment => apartment.IdUser == userId))
-                .ToList();
-        else
-            throw new InvalidOperationException("Invalid user id in token");
+        var listApart = _mapper
+            .Map<List<ApartmentDTO>>(_repository.GetAll().Where(apartment => apartment.UserId == userId ));
+        return listApart.ToList();
     }
 
     public async Task<bool> DeleteApartment(int id)
     {
-        var apartment = await _repository.Table.FindAsync(id);
+        var apartment = await _repository.FindAsync(id);
         return apartment != null && await _repository.DeleteAsync(apartment) > 0;
     }
 
@@ -63,13 +49,13 @@ public class ApartmentService : IApartmentService
 
     public async Task<ApartmentDTO?> GetById(int id)
     {
-        var apartment = await _repository.Table.FindAsync(id);
+        var apartment = await _repository.FindAsync(id);
         return apartment != null ? _mapper.Map<ApartmentDTO>(apartment) : null;
     }
 
     public async Task<UpdateApartmentDTO> UpdateApartment(int id, UpdateApartmentDTO apartment)
     {
-        var entity = await _repository.Table.FindAsync(id);
+        var entity = await _repository.FindAsync(id);
         if (entity == null)
             throw new KeyNotFoundException($"Unable to find entity with such key {id}");
 

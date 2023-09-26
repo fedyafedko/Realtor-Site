@@ -7,15 +7,12 @@ public class Repo<TEntity, TKey> : IRepo<TEntity, TKey>
     where TEntity : class
     where TKey : IEquatable<TKey>
 {
-    private bool _disposeContext;
-    private bool _isDisposed;
     private ApplicationDbContext ApplicationDbContext { get; set; }
     public DbSet<TEntity> Table { get; }
     protected Repo(ApplicationDbContext applicationDbContext)
     {
         ApplicationDbContext = applicationDbContext ?? throw new ArgumentNullException(nameof(applicationDbContext));
         Table = ApplicationDbContext.Set<TEntity>();
-        _disposeContext = false;
     }
 
     public int Add(TEntity entity, bool persist = true)
@@ -92,19 +89,5 @@ public class Repo<TEntity, TKey> : IRepo<TEntity, TKey>
     {
         Table.Update(entity);
         return persist ? await SaveGangesAsync() : 0;
-    }
-    public void Dispose(bool disposing)
-    {
-        if (_isDisposed)
-            return;
-        if (disposing && _disposeContext)
-            ApplicationDbContext.Dispose();
-        _isDisposed = true;
-
-    }
-    public void Dispose()
-    {
-        Dispose(true);
-        GC.SuppressFinalize(this);
     }
 }

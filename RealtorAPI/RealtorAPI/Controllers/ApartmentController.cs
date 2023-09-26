@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Realtor.BLL.Interfaces;
-using RealtorAPI.Common.DTO;
+using RealtorAPI.Common.DTO.Apartment;
+using RealtorAPI.Extensions;
 
 namespace RealtorAPI.Controllers;
 
-[Route("/")]
+[Route("[controller]")]
 [ApiController]
-
 public class ApartmentController : Controller
 {
     private readonly IApartmentService _service;
@@ -30,15 +30,15 @@ public class ApartmentController : Controller
         }
     }
 
-    [HttpPost("apartment")]
+    [HttpPost]
     [ActionName(nameof(GetById))]
     [Authorize(Roles = "Realtor")]
     public async Task<IActionResult> InsertApartment(CreateApartmentDTO apartment)
     {
         try
         {
-            string jwtToken = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
-            var result = await _service.AddApartment(apartment, jwtToken);
+            var userId = HttpContext.GetUserId();
+            var result = await _service.AddApartment(userId, apartment);
             return CreatedAtAction(nameof(_service.GetById), new { apartment = result.Name }, result);
         }
         catch (Exception ex)
@@ -92,14 +92,15 @@ public class ApartmentController : Controller
             return BadRequest(ex.Message);
         }
     }
+
     [HttpGet("realtor")]
     [Authorize(Roles = "Realtor")]
     public IActionResult GetAllForRealtor()
     {
         try
         {
-            string jwtToken = Request.Headers["Authorization"].ToString().Replace("Bearer ", "");
-            return Ok(_service.GetAllForRealtor(jwtToken));
+            var userId = HttpContext.GetUserId();
+            return Ok(_service.GetAllForRealtor(userId));
         }
         catch (InvalidOperationException ex)
         {

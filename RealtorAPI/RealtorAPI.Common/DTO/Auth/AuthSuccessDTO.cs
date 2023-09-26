@@ -1,2 +1,2 @@
-﻿namespace RealtorAPI.Common.DTO;
+﻿namespace RealtorAPI.Common.DTO.Auth;
 public record AuthSuccessDTO(string Token);
