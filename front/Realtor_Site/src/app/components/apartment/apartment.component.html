@@ -48,7 +48,7 @@
         <img src="../../../assets/Images/phone.png" alt="" class="imageInfo">
         {{ this.apartment.phone }}
       </p>
-      <div *ngIf="this.apartment.idUser == this.id" id="buttonForEdit">
+      <div *ngIf="this.idUser == this.id" id="buttonForEdit">
         <button (click)="update()" class="edit" id="update">
           <img src="../../../assets/Images/pencil.png" alt="" class="imageEdit">
         </button>
@@ -62,13 +62,13 @@
     <article class="media">
       <div class="media-left">
         <figure class="image is-128x128">
-          <img class="image" [src]=this.user.image alt="Image" id="profileImage">
+          <img class="image" [src]=this.user?.image alt="Image" id="profileImage">
         </figure>
       </div>
       <div class="media-content">
         <div class="content">
-          <strong id="loginInfo">{{this.user.login}}</strong>
-          <small id="emailInfo">{{this.user.email}}</small>
+          <strong id="loginInfo">{{this.apartment.user?.login}}</strong>
+          <small id="emailInfo">{{this.apartment.user?.email}}</small>
           <p id="description">{{ this.apartment.description }}</p>
         </div>
       </div>

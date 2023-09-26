@@ -1,7 +1,14 @@
-﻿namespace RealtorAPI.Common.DTO.Apartment;
+﻿using RealtorAPI.Common.DTO.User;
+
+namespace RealtorAPI.Common.DTO.Apartment;
 
 public class ApartmentDTO
 {
+    public ApartmentDTO(UserDTO user)
+    {
+        User = user;
+    }
+
     public int Id { get; set; } 
     public int UserId { get; set; }
     public string Name { get; set; } = null!;
@@ -15,4 +22,5 @@ public class ApartmentDTO
     public string Price { get; set; } = string.Empty;
     public string Email { get; set; } = null!;
     public string Phone { get; set; } = null!;
+    public UserDTO User { get; set; }
 }

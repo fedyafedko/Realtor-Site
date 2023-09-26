@@ -49,8 +49,8 @@ public class ApartmentService : IApartmentService
 
     public async Task<ApartmentDTO?> GetById(int id)
     {
-        var apartment = await _repository.FindAsync(id);
-        return apartment != null ? _mapper.Map<ApartmentDTO>(apartment) : null;
+        var apartment = await _repository.GetByApartmentId(id);
+        return _mapper.Map<ApartmentDTO>(apartment);
     }
 
     public async Task<UpdateApartmentDTO> UpdateApartment(int id, UpdateApartmentDTO apartment)

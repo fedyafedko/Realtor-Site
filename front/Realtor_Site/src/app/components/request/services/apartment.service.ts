@@ -11,15 +11,15 @@ export class ApartmentService {
   constructor(private http: HttpClient, private storage: CookieService) { }
 
   getApartments(){
-    return this.http.get(`http://localhost:5116/`);
+    return this.http.get(`http://localhost:5116/Apartment`);
   }
   getApartmentsForRealtor(){
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${this.storage.get('token')}`);
-    return this.http.get(`http://localhost:5116/realtor`, { headers });
+    return this.http.get(`http://localhost:5116/Apartment/realtor`, { headers });
   }
   getApartmentsById(id: number){
-    return this.http.get(`http://localhost:5116/${id}`);
+    return this.http.get(`http://localhost:5116/Apartment/${id}`);
   }
   add(apartment: Apartment) {
     const body = {
@@ -37,12 +37,12 @@ export class ApartmentService {
     };
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${this.storage.get('token')}`);
-    return this.http.post('http://localhost:5116/apartment', body, { headers });
+    return this.http.post('http://localhost:5116/Apartment', body, { headers });
   }
   deleteApartment(id: number){
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${this.storage.get('token')}`);
-    return this.http.delete(`http://localhost:5116/${id}`, { headers });
+    return this.http.delete(`http://localhost:5116/Apartment/${id}`, { headers });
   }
   update(apartment: Apartment, id: number) {
     const body = {
@@ -60,6 +60,6 @@ export class ApartmentService {
     };
     const headers = new HttpHeaders()
       .set('Authorization', `Bearer ${this.storage.get('token')}`);
-    return this.http.put(`http://localhost:5116/${id}`, body, { headers });
+    return this.http.put(`http://localhost:5116/Apartment/${id}`, body, { headers });
   }
 }

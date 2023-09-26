@@ -42,7 +42,7 @@
   </div>
   <div *ngIf="showApartments" id="apartContainer">
     <div class="apartment-container">
-      <div id="apart" *ngFor="let property of this.apartment" (click)="redirectToOtherPage(property.id, property.idUser)">
+      <div id="apart" *ngFor="let property of this.apartment" (click)="redirectToOtherPage(property.id, property.userId)">
         <img id="previewImage" [src]=splitImages(property.images) alt="Preview Image">
         <div id="info">
           <p id="price">{{ property.price}}</p>

@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { User } from '../models/user.model';
+import {CookieService} from "ngx-cookie-service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private storage: CookieService) { }
 
   registerUser(user: User) {
     const body = { login: user.login, password: user.password, email: user.email, phone: user.phone, role: user.role, image: user.image };
@@ -17,10 +18,12 @@ export class UserService {
     const body = { login: user.login, password: user.password };
     return this.http.post('http://localhost:5116/Auth/Login', body);
   }
-  getUserByToken(token: string){
+ /* getUserByToken(token: string){
     return this.http.get(`http://localhost:5116/Auth/${token}`)
-  }
-  getUserById(id: number){
-    return this.http.get(`http://localhost:5116/Auth/id=${id}`)
+  }*/
+  getUserById(){
+    const headers = new HttpHeaders()
+      .set('Authorization', `Bearer ${this.storage.get('token')}`);
+    return this.http.get(`http://localhost:5116/User`, {headers})
   }
 }

@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
     this.router.navigate(['/']);
   }
   getUser() {
-    this.userService.getUserByToken(this.storage.get('token')).subscribe({
+    this.userService.getUserById().subscribe({
       next: (data: any) => {
         this.user.image = `../../../assets/ImagesForUserProfile/${data.images}`;
         this.user.login = data.login;
